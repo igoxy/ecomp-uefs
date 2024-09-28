@@ -1,0 +1,54 @@
+====================================================================
+Disciplina: EXA869 - MI Processadores de Linguagens de Programação
+Aluno: Igor Figueredo Soares
+Matrícula: 19211242
+====================================================================
+
+- Neste arquivo contém a linguagem utilizada e as s instruções para a execução do código.
+
+============================== LINGUAGEM UTILIZADA ================================
+- A linguagem utilizada foi o Python 3, na versão 3.8.1 (mais especificamente 3.8.1rc1).
+
+
+============================= INSTRUÇÕES PARA A EXECUÇÃO =============================
+A interface do programa foi criado utilizando o biblioteca Tkinter, nativa do Python. Porém, em alguns casos, pode ser necessário efetuar sua instalação a parte.
+Para tal, siga as instruções abaixo.
+
+Sistemas operacionais Linux:
+sudo apt-get install python3-tk
+
+No Windows pode ser necessário instalar por meio do geranciador de pacotes do Python (pip):
+pip install tk
+
+OBS. 2: No Linux, caso a instalação via apt-get não seja suficiente, execute a instalação via pip por meio do comando: pip3 install tk
+
+OBS. 1: Caso encontre dificuldades na instalação da biblioteca, sinta-se à vontade para entrar em contato comigo
+E-mail: ifs54@hotmail.com ou ifs5544@gmail.com.
+
+-------------------------------- Execução do código --------------------------------
+O arquivo principal do projeto é o main. A partir dele o projeto pode ser executado.
+
+Comando para a execução no Windows via terminal*:
+python main.py
+
+Comando para a execução no Linux via terminal*:
+python3 main.py
+
+*Considerando o Python instalado na versão correta.
+
+
+============================= ELEMENTOS DA INTERFACE =============================
+A interface apresenta quatro frames (quadros):
+1. O primeiro quadro é uma caixa de texto onde pode ser inserido o código-fonte a ser analisado;
+2. O segundo quadro é uma lista que apresenta todos Tokens gerados
+    2.1. Os Tokens são exibidos em dois formatos:
+        2.1.1. Formato 1: < TOKEN.ALGUMA_COISA, lexema >.
+        2.1.2. Formato 2 (para identificadores): < TOKEN.ID, lexema, posição_do_id_na_tabela_de_símbolos >.
+3. O terceiro é uma lista que apresenta os erros da análise léxica;
+4. O terceiro quadro exibi a tabela de símbolos para os identificadores
+    4.1. Os itens da tabela de símbolo são exibidos no seguinte formato:
+        índice - lexema.
+
+Além dos quadros, a interface apresenta um botão para executar a análise léxica. O botão tem cor verde e apresenta o texto: EXECUTAR ANÁLISE.
+
+OBS. 2: As listas que apresentam os tokens, os erros e a tabela de símbolos, crescem de cima para baixo, logo, se houver muitos elementos, será necessário rolar as listas para baixo com o scroll para visualizar todos.

@@ -1,0 +1,5 @@
+# Fuga Radioativa
+Repositório para o jogo Fuga Radioativa.
+
+## Resumo
+Neste trabalho é apresentada uma proposta de jogo digital, chamado Fuga Radioativa,  como uma ferramenta educativa para o ensino de química, visando tornar o aprendizado dessa disciplina mais dinâmico e atrativo para os alunos. Utilizando a abordagem clássica de jogos de plataforma, o jogo busca consolidar conceitos químicos de forma lúdica e acessível, oferecendo uma experiência interativa e envolvente. Desenvolvido com base no motor de jogo Godot e com uma metodologia que envolve a coleta de elementos químicos em um cenário de laboratórios com isótopos radioativos, o jogo promove a associação de informações sobre os elementos com seus símbolos químicos. Resultados preliminares indicam que o jogo proporciona uma abordagem prática e eficaz para a revisão e fixação de conceitos químicos, embora apresente potencial para expansão e aprimoramento, sugerindo a implementação de novos níveis e testes de validação para avaliar sua eficácia como ferramenta de aprendizado

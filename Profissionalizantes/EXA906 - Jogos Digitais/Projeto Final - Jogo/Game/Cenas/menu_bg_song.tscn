@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl6g278ypl2mg"]
+
+[ext_resource type="AudioStream" uid="uid://dr7rr0hlsfneo" path="res://Audios/Radioactive - menu song.wav" id="1_fwa64"]
+
+[node name="MenuBgSong" type="AudioStreamPlayer"]
+stream = ExtResource("1_fwa64")
+volume_db = -25.0
+autoplay = true

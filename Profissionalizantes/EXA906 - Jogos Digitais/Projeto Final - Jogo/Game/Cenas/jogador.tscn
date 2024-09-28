@@ -1,0 +1,273 @@
+[gd_scene load_steps=19 format=3 uid="uid://pdnwr7ppryjr"]
+
+[ext_resource type="Script" path="res://Scripts/Jogador.gd" id="1_372wm"]
+[ext_resource type="Texture2D" uid="uid://b8exr2q6ng5t8" path="res://Assets/Personagem/Cientista/RunPw.png" id="2_c7icb"]
+[ext_resource type="Texture2D" uid="uid://cy1naxju4optt" path="res://Assets/Personagem/Cientista/Run.png" id="3_sbx7h"]
+[ext_resource type="Texture2D" uid="uid://f4gl60eyrcm3" path="res://Assets/Personagem/Cientista/Idle.png" id="4_bdiky"]
+[ext_resource type="Texture2D" uid="uid://760fcy0vmnyb" path="res://Assets/Personagem/Cientista/IdlePw.png" id="5_5jvo6"]
+[ext_resource type="AudioStream" uid="uid://cs02ya0mncm" path="res://Efeitos Sonoros/jump.wav" id="6_umxp8"]
+[ext_resource type="AudioStream" uid="uid://b8lxwhtnnoubl" path="res://Efeitos Sonoros/powerUp.wav" id="7_q8vxi"]
+[ext_resource type="AudioStream" uid="uid://cikcy58dftyj1" path="res://Efeitos Sonoros/hitHurt.wav" id="8_5agf0"]
+[ext_resource type="AudioStream" uid="uid://bwir70pffh042" path="res://Efeitos Sonoros/powerUpEnd.wav" id="8_ke7ij"]
+[ext_resource type="AudioStream" uid="uid://0rs17wa7s2mn" path="res://Efeitos Sonoros/pickupElementWrong.wav" id="10_ojad5"]
+[ext_resource type="AudioStream" uid="uid://bfqyri2pqbysb" path="res://Efeitos Sonoros/pickupElementRight.wav" id="11_8fiot"]
+
+[sub_resource type="Animation" id="Animation_70hjs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura_jogador:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textura_jogador:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textura_jogador:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_c7icb")]
+}
+
+[sub_resource type="Animation" id="Animation_0fpoq"]
+resource_name = "andar"
+length = 1.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura_jogador:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textura_jogador:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_sbx7h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textura_jogador:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_i87lr"]
+resource_name = "andar"
+length = 1.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura_jogador:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textura_jogador:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_c7icb")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textura_jogador:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_edadi"]
+resource_name = "idle-c"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura_jogador:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textura_jogador:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_bdiky")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textura_jogador:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_i50b3"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura_jogador:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textura_jogador:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_5jvo6")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textura_jogador:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jf588"]
+_data = {
+"RESET": SubResource("Animation_70hjs"),
+"andar": SubResource("Animation_0fpoq"),
+"andar-pw": SubResource("Animation_i87lr"),
+"idle": SubResource("Animation_edadi"),
+"idle-pw": SubResource("Animation_i50b3")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxxhn"]
+size = Vector2(24, 24)
+
+[node name="Jogador" type="CharacterBody2D" groups=["jogador"]]
+position = Vector2(521, 307)
+collision_mask = 14
+script = ExtResource("1_372wm")
+
+[node name="textura_jogador" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_c7icb")
+hframes = 11
+
+[node name="animacao_jogador" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jf588")
+}
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_wxxhn")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 10.0
+one_shot = true
+
+[node name="PuloFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_umxp8")
+volume_db = -2.0
+
+[node name="PowerupFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_q8vxi")
+
+[node name="PowerupEndFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ke7ij")
+
+[node name="DieFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_5agf0")
+
+[node name="WrongElementFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ojad5")
+
+[node name="RightElementFx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_8fiot")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_powerup_timeout"]

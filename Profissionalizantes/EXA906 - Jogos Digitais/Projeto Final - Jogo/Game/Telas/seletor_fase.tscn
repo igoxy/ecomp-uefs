@@ -1,0 +1,164 @@
+[gd_scene load_steps=15 format=3 uid="uid://d3u1gnmjiua3n"]
+
+[ext_resource type="FontFile" uid="uid://bjshi1hdnnmdc" path="res://Fontes/game_over.ttf" id="1_6mekj"]
+[ext_resource type="Script" path="res://Scripts/Seletor_fase.gd" id="1_ofl1i"]
+[ext_resource type="Texture2D" uid="uid://k8mqr4lr5cbn" path="res://Assets/Outros/Fases-imagens/fase1/1-normal.png" id="2_a7w02"]
+[ext_resource type="Texture2D" uid="uid://caotvq64wnnbk" path="res://Assets/Outros/Fases-imagens/fase1/1-hover.png" id="3_6qyey"]
+[ext_resource type="Texture2D" uid="uid://btg8df2l41jp5" path="res://Assets/Outros/Fases-imagens/fase2/2-hover.png" id="4_3kax0"]
+[ext_resource type="Theme" uid="uid://ebwtkeg64dc6" path="res://Temas/botoes_tema.tres" id="4_48j0j"]
+[ext_resource type="Texture2D" uid="uid://da2wlrvt5227c" path="res://Assets/Outros/Fases-imagens/fase2/2-normal.png" id="5_tvt6s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t6quu"]
+font = ExtResource("1_6mekj")
+font_size = 60
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghix4"]
+texture = ExtResource("2_a7w02")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q12xv"]
+texture = ExtResource("3_6qyey")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jl6o5"]
+font = ExtResource("1_6mekj")
+font_size = 45
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mmnmw"]
+texture = ExtResource("5_tvt6s")
+region_rect = Rect2(0, 0, 210, 120)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otj0b"]
+texture = ExtResource("4_3kax0")
+region_rect = Rect2(0, 0, 210, 120)
+
+[sub_resource type="LabelSettings" id="LabelSettings_475r5"]
+font = ExtResource("1_6mekj")
+font_size = 45
+
+[node name="seletor_fase" type="Node2D"]
+script = ExtResource("1_ofl1i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[node name="Titulo" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.5
+offset_top = 93.0
+offset_right = 70.5
+offset_bottom = 116.0
+grow_horizontal = 2
+text = "SELECIONE A FASE"
+label_settings = SubResource("LabelSettings_t6quu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -118.0
+offset_right = 295.0
+offset_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="fase1" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BtnFase1" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer/fase1"]
+custom_minimum_size = Vector2(270, 160)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6mekj")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_ghix4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q12xv")
+text = "FASE 1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/fase1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="RecordeTexto" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/fase1/HBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+text = "RECORDE:"
+label_settings = SubResource("LabelSettings_jl6o5")
+horizontal_alignment = 1
+
+[node name="RecordePontos" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/fase1/HBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_jl6o5")
+horizontal_alignment = 2
+
+[node name="fase2" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="BtnFase2" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer/fase2"]
+custom_minimum_size = Vector2(270, 160)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6mekj")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_mmnmw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_otj0b")
+text = "FASE 2"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/fase2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="RecordeTexto" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/fase2/HBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "RECORDE:"
+label_settings = SubResource("LabelSettings_475r5")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="RecordePontos" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/fase2/HBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_475r5")
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="Voltar" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_48j0j")
+text = "Voltar"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/fase1/BtnFase1" to="." method="_on_btn_fase_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/fase2/BtnFase2" to="." method="_on_btn_fase_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]

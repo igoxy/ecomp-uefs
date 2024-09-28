@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://m1eneowdrbar"]
+
+[ext_resource type="Script" path="res://Scripts/Caminho-inimigo.gd" id="1_or8hi"]
+[ext_resource type="Texture2D" uid="uid://r5v025n8qsso" path="res://Assets/Outros/inimigo-radiacao.png" id="2_65lff"]
+
+[sub_resource type="Curve2D" id="Curve2D_mm6m1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -304, 0, 0, 0, 0, 0, 448, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6weqh"]
+size = Vector2(32, 32)
+
+[node name="Inimigo" type="Node2D"]
+script = ExtResource("1_or8hi")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_mm6m1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotation = 3.14159
+rotates = false
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+scale = Vector2(0.622312, 0.639998)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
+shape = SubResource("RectangleShape2D_6weqh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/Area2D"]
+texture = ExtResource("2_65lff")
+
+[connection signal="body_entered" from="Path2D/PathFollow2D/Area2D" to="." method="_on_inimigo_body_entered"]

@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ebwtkeg64dc6"]
+
+[ext_resource type="Texture2D" uid="uid://chh1ob34yg3jq" path="res://Assets/Outros/GUI.png" id="2_ykmg0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dveju"]
+texture = ExtResource("2_ykmg0")
+region_rect = Rect2(145, 98, 46, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r72wk"]
+texture = ExtResource("2_ykmg0")
+region_rect = Rect2(145, 81, 46, 14)
+
+[resource]
+Button/font_sizes/font_size = 16
+Button/styles/hover = SubResource("StyleBoxTexture_dveju")
+Button/styles/normal = SubResource("StyleBoxTexture_r72wk")

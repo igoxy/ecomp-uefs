@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://dkce236e7jx74"]
+
+[ext_resource type="Texture2D" uid="uid://d2ff5lg452kdb" path="res://Assets/Outros/Background gameover.png" id="1_021uu"]
+[ext_resource type="Script" path="res://Scripts/Game_over.gd" id="1_cm4ha"]
+[ext_resource type="Texture2D" uid="uid://dbqnjvekdqdw1" path="res://Assets/Outros/radiacao-bg.png" id="2_3u7u1"]
+[ext_resource type="FontFile" uid="uid://bjshi1hdnnmdc" path="res://Fontes/game_over.ttf" id="3_d87rm"]
+[ext_resource type="Texture2D" uid="uid://chh1ob34yg3jq" path="res://Assets/Outros/GUI.png" id="4_bi11u"]
+[ext_resource type="Texture2D" uid="uid://csnu7f3eks2km" path="res://Assets/Outros/Cientista_Dead.png" id="5_8rt6g"]
+[ext_resource type="AudioStream" uid="uid://duh3qhq1ua5kq" path="res://Efeitos Sonoros/gameOver.wav" id="7_cx4rh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nbryo"]
+font = ExtResource("3_d87rm")
+font_size = 250
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wmyq"]
+texture = ExtResource("4_bi11u")
+region_rect = Rect2(113, 81, 30, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3atrj"]
+texture = ExtResource("4_bi11u")
+region_rect = Rect2(113, 98, 30, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vke8r"]
+texture = ExtResource("4_bi11u")
+region_rect = Rect2(113, 113, 30, 14)
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_cm4ha")
+
+[node name="BackgroundGameover" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_021uu")
+
+[node name="RadiacaoBg" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("2_3u7u1")
+
+[node name="GameOver" type="Label" parent="."]
+texture_filter = 1
+offset_left = 355.0
+offset_top = 208.0
+offset_right = 925.0
+offset_bottom = 350.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_nbryo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TentarNovamente" type="Button" parent="."]
+texture_filter = 1
+offset_left = 512.0
+offset_top = 384.0
+offset_right = 768.0
+offset_bottom = 448.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wmyq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3atrj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vke8r")
+text = "Tentar novamente"
+language = "pt_BR"
+
+[node name="MenuPrincipal" type="Button" parent="."]
+texture_filter = 1
+offset_left = 512.0
+offset_top = 464.0
+offset_right = 768.0
+offset_bottom = 528.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wmyq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3atrj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vke8r")
+text = "Menu principal"
+language = "pt_BR"
+
+[node name="PersonagemDead" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(640, 640)
+scale = Vector2(2.06618, 1.57403)
+texture = ExtResource("5_8rt6g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cx4rh")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="TentarNovamente" to="." method="_on_tentar_novamente_pressed"]
+[connection signal="pressed" from="MenuPrincipal" to="." method="_on_menu_principal_pressed"]

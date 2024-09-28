@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bocj80m6rt8hj"]
+
+[node name="PosElemento" type="Marker2D" groups=["posicao_elementos"]]
+position = Vector2(1248, 608)

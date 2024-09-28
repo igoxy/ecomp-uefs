@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwir70pffh042"
+path="res://.godot/imported/powerUpEnd.wav-3a298f2b8324e37934d5d884249b4832.sample"
+
+[deps]
+
+source_file="res://Efeitos Sonoros/powerUpEnd.wav"
+dest_files=["res://.godot/imported/powerUpEnd.wav-3a298f2b8324e37934d5d884249b4832.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

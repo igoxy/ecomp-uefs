@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://yikal6fq0ilh"]
+
+[ext_resource type="Script" path="res://Scripts/Elemento.gd" id="1_iqbuy"]
+[ext_resource type="Texture2D" uid="uid://dn6vrbjtse5pp" path="res://Simbolos/Al.png" id="2_bedri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8528"]
+size = Vector2(26.5, 27)
+
+[node name="Elemento" type="Area2D" groups=["elementos"]]
+script = ExtResource("1_iqbuy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 0)
+shape = SubResource("RectangleShape2D_f8528")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(7.15256e-07, -7.15256e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bedri")
+
+[connection signal="body_entered" from="." to="." method="_on_elemento_body_entered"]
