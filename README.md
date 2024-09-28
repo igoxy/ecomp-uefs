@@ -1,2 +1,3 @@
 # ecomp-uefs
- Repositório para os projetos desenvolvidos nos módulos integradores 
+
+ Repositório para os projetos/fragmentos desenvolvidos durante o curso de gradução em Engenharia de Computação na UEFS.
