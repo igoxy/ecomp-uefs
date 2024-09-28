@@ -1,0 +1,14 @@
+
+State Machine - |get_val_tot|state
+Name state.wait_pulse_down state.penny_invalid state.penny2 state.penny1_75 state.penny1_50 state.penny1_25 state.penny1 state.penny0_75 state.penny0_50 state.penny0_25 state.penny0 
+state.penny0 0 0 0 0 0 0 0 0 0 0 0 
+state.penny0_25 0 0 0 0 0 0 0 0 0 1 1 
+state.penny0_50 0 0 0 0 0 0 0 0 1 0 1 
+state.penny0_75 0 0 0 0 0 0 0 1 0 0 1 
+state.penny1 0 0 0 0 0 0 1 0 0 0 1 
+state.penny1_25 0 0 0 0 0 1 0 0 0 0 1 
+state.penny1_50 0 0 0 0 1 0 0 0 0 0 1 
+state.penny1_75 0 0 0 1 0 0 0 0 0 0 1 
+state.penny2 0 0 1 0 0 0 0 0 0 0 1 
+state.penny_invalid 0 1 0 0 0 0 0 0 0 0 1 
+state.wait_pulse_down 1 0 0 0 0 0 0 0 0 0 1 

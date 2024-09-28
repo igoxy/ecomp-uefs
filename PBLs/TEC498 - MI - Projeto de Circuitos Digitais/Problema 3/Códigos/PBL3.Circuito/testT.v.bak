@@ -1,0 +1,6 @@
+module testT(clk, counter);
+	input clk;
+	output reg [30:0] counter;
+	
+	always@(posedge clk) counter = counter + 1;
+endmodule

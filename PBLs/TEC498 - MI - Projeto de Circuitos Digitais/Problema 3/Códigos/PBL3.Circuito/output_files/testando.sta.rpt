@@ -1,0 +1,1225 @@
+Timing Analyzer report for testando
+Mon Jun 21 19:54:17 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'controlOutputDisplay:comb_12|clk_counter[13]'
+ 13. Setup: 'got_coin'
+ 14. Setup: 'get_id:comb_9|id_typed'
+ 15. Setup: 'add_id:comb_4|col[0]'
+ 16. Hold: 'add_id:comb_4|col[0]'
+ 17. Hold: 'clk'
+ 18. Hold: 'get_id:comb_9|id_typed'
+ 19. Hold: 'controlOutputDisplay:comb_12|clk_counter[13]'
+ 20. Hold: 'got_coin'
+ 21. Recovery: 'clk'
+ 22. Removal: 'clk'
+ 23. Setup Transfers
+ 24. Hold Transfers
+ 25. Recovery Transfers
+ 26. Removal Transfers
+ 27. Report TCCS
+ 28. Report RSKM
+ 29. Unconstrained Paths Summary
+ 30. Clock Status Summary
+ 31. Unconstrained Input Ports
+ 32. Unconstrained Output Ports
+ 33. Unconstrained Input Ports
+ 34. Unconstrained Output Ports
+ 35. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; testando                                            ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM240T100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.2%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                     ;
++----------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------------+
+; Clock Name                                   ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                          ;
++----------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------------+
+; add_id:comb_4|col[0]                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { add_id:comb_4|col[0] }                         ;
+; clk                                          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                          ;
+; controlOutputDisplay:comb_12|clk_counter[13] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { controlOutputDisplay:comb_12|clk_counter[13] } ;
+; get_id:comb_9|id_typed                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { get_id:comb_9|id_typed }                       ;
+; got_coin                                     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { got_coin }                                     ;
++----------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Fmax Summary                                                                                                                                ;
++------------+-----------------+----------------------------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                                   ; Note                                                          ;
++------------+-----------------+----------------------------------------------+---------------------------------------------------------------+
+; 98.36 MHz  ; 98.36 MHz       ; clk                                          ;                                                               ;
+; 186.08 MHz ; 186.08 MHz      ; controlOutputDisplay:comb_12|clk_counter[13] ;                                                               ;
+; 362.19 MHz ; 304.04 MHz      ; got_coin                                     ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+----------------------------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------------------------+
+; Setup Summary                                                         ;
++----------------------------------------------+--------+---------------+
+; Clock                                        ; Slack  ; End Point TNS ;
++----------------------------------------------+--------+---------------+
+; clk                                          ; -9.167 ; -390.869      ;
+; controlOutputDisplay:comb_12|clk_counter[13] ; -8.889 ; -84.861       ;
+; got_coin                                     ; -6.991 ; -26.398       ;
+; get_id:comb_9|id_typed                       ; -4.673 ; -20.130       ;
+; add_id:comb_4|col[0]                         ; -4.610 ; -31.536       ;
++----------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Summary                                                          ;
++----------------------------------------------+--------+---------------+
+; Clock                                        ; Slack  ; End Point TNS ;
++----------------------------------------------+--------+---------------+
+; add_id:comb_4|col[0]                         ; -2.990 ; -6.112        ;
+; clk                                          ; -1.800 ; -23.134       ;
+; get_id:comb_9|id_typed                       ; 0.426  ; 0.000         ;
+; controlOutputDisplay:comb_12|clk_counter[13] ; 1.927  ; 0.000         ;
+; got_coin                                     ; 2.207  ; 0.000         ;
++----------------------------------------------+--------+---------------+
+
+
++--------------------------------+
+; Recovery Summary               ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -3.975 ; -19.875       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Removal Summary               ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 4.421 ; 0.000         ;
++-------+-------+---------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Pulse Width Summary                                           ;
++----------------------------------------------+--------+---------------+
+; Clock                                        ; Slack  ; End Point TNS ;
++----------------------------------------------+--------+---------------+
+; clk                                          ; -2.289 ; -2.289        ;
+; got_coin                                     ; -2.289 ; -2.289        ;
+; controlOutputDisplay:comb_12|clk_counter[13] ; 0.234  ; 0.000         ;
+; get_id:comb_9|id_typed                       ; 0.234  ; 0.000         ;
+; add_id:comb_4|col[0]                         ; 0.500  ; 0.000         ;
++----------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                            ;
++--------+-------------------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; -9.167 ; get_val_tot:comb_10|state.penny0_75       ; maquina4:comb_6|state.all_ok ; clk          ; clk         ; 1.000        ; 0.000      ; 9.834      ;
+; -9.162 ; get_val_tot:comb_10|state.penny0_75       ; maquina4:comb_6|state.error2 ; clk          ; clk         ; 1.000        ; 0.000      ; 9.829      ;
+; -8.955 ; timing:comb_7|counter[2]                  ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 9.622      ;
+; -8.946 ; timing:comb_7|counter[12]                 ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 9.613      ;
+; -8.945 ; get_val_tot:comb_10|state.penny0_50       ; maquina4:comb_6|state.all_ok ; clk          ; clk         ; 1.000        ; 0.000      ; 9.612      ;
+; -8.940 ; get_val_tot:comb_10|state.penny0_50       ; maquina4:comb_6|state.error2 ; clk          ; clk         ; 1.000        ; 0.000      ; 9.607      ;
+; -8.899 ; timing:comb_7|counter[0]                  ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 9.566      ;
+; -8.717 ; timing:comb_7|counter[11]                 ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 9.384      ;
+; -8.709 ; timing:comb_7|counter[16]                 ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 9.376      ;
+; -8.709 ; timing:comb_7|counter[1]                  ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 9.376      ;
+; -8.599 ; timing:comb_7|counter[6]                  ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 9.266      ;
+; -8.526 ; timing:comb_7|counter[9]                  ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 9.193      ;
+; -8.452 ; get_val_tot:comb_10|state.penny1_50       ; maquina4:comb_6|state.all_ok ; clk          ; clk         ; 1.000        ; 0.000      ; 9.119      ;
+; -8.452 ; timing:comb_7|counter[7]                  ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 9.119      ;
+; -8.447 ; get_val_tot:comb_10|state.penny1_50       ; maquina4:comb_6|state.error2 ; clk          ; clk         ; 1.000        ; 0.000      ; 9.114      ;
+; -8.375 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[7]     ; clk          ; clk         ; 1.000        ; 0.000      ; 9.042      ;
+; -8.319 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[7]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.986      ;
+; -8.317 ; timing:comb_7|counter[8]                  ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.984      ;
+; -8.291 ; get_val_tot:comb_10|state.penny1_75       ; maquina4:comb_6|state.all_ok ; clk          ; clk         ; 1.000        ; 0.000      ; 8.958      ;
+; -8.291 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.958      ;
+; -8.290 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[9]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.957      ;
+; -8.289 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.956      ;
+; -8.287 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.954      ;
+; -8.286 ; get_val_tot:comb_10|state.penny1_75       ; maquina4:comb_6|state.error2 ; clk          ; clk         ; 1.000        ; 0.000      ; 8.953      ;
+; -8.286 ; timing:comb_7|counter[15]                 ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.953      ;
+; -8.285 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.952      ;
+; -8.282 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.949      ;
+; -8.281 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[9]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.948      ;
+; -8.280 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.947      ;
+; -8.278 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.945      ;
+; -8.278 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[11]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.945      ;
+; -8.278 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.945      ;
+; -8.277 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.944      ;
+; -8.276 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.943      ;
+; -8.276 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.943      ;
+; -8.275 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[6]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.942      ;
+; -8.269 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.936      ;
+; -8.269 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[11]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.936      ;
+; -8.268 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.935      ;
+; -8.267 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.934      ;
+; -8.266 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[6]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.933      ;
+; -8.235 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.902      ;
+; -8.234 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[9]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.901      ;
+; -8.233 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.900      ;
+; -8.231 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.898      ;
+; -8.229 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.896      ;
+; -8.222 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.889      ;
+; -8.222 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[11]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.889      ;
+; -8.221 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.888      ;
+; -8.220 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.887      ;
+; -8.219 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[6]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.886      ;
+; -8.167 ; timing:comb_7|counter[10]                 ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.834      ;
+; -8.129 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[7]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.796      ;
+; -8.126 ; timing:comb_7|counter[13]                 ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.793      ;
+; -8.125 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.792      ;
+; -8.121 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[19]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.788      ;
+; -8.120 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[21]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.787      ;
+; -8.117 ; timing:comb_7|counter[14]                 ; timing:comb_7|time_max_exb   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.784      ;
+; -8.116 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.783      ;
+; -8.112 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[19]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.779      ;
+; -8.111 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[21]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.778      ;
+; -8.069 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[10]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.736      ;
+; -8.065 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[19]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.732      ;
+; -8.064 ; timing:comb_7|counter[0]                  ; timing:comb_7|counter[21]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.731      ;
+; -8.053 ; timing:comb_7|counter[11]                 ; timing:comb_7|counter[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.720      ;
+; -8.052 ; timing:comb_7|counter[11]                 ; timing:comb_7|counter[9]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.719      ;
+; -8.051 ; timing:comb_7|counter[11]                 ; timing:comb_7|counter[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.718      ;
+; -8.049 ; timing:comb_7|counter[11]                 ; timing:comb_7|counter[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.716      ;
+; -8.047 ; get_val_tot:comb_10|state.wait_pulse_down ; maquina4:comb_6|state.all_ok ; clk          ; clk         ; 1.000        ; 0.000      ; 8.714      ;
+; -8.047 ; timing:comb_7|counter[11]                 ; timing:comb_7|counter[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.714      ;
+; -8.045 ; timing:comb_7|counter[16]                 ; timing:comb_7|counter[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.712      ;
+; -8.045 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.712      ;
+; -8.044 ; timing:comb_7|counter[16]                 ; timing:comb_7|counter[9]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.711      ;
+; -8.044 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[9]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.711      ;
+; -8.043 ; timing:comb_7|counter[16]                 ; timing:comb_7|counter[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.710      ;
+; -8.043 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[14]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.710      ;
+; -8.042 ; get_val_tot:comb_10|state.wait_pulse_down ; maquina4:comb_6|state.error2 ; clk          ; clk         ; 1.000        ; 0.000      ; 8.709      ;
+; -8.041 ; timing:comb_7|counter[16]                 ; timing:comb_7|counter[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.708      ;
+; -8.041 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[2]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.708      ;
+; -8.040 ; timing:comb_7|counter[11]                 ; timing:comb_7|counter[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.707      ;
+; -8.040 ; timing:comb_7|counter[11]                 ; timing:comb_7|counter[11]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.707      ;
+; -8.039 ; timing:comb_7|counter[16]                 ; timing:comb_7|counter[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.706      ;
+; -8.039 ; timing:comb_7|counter[11]                 ; timing:comb_7|counter[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.706      ;
+; -8.039 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[16]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.706      ;
+; -8.038 ; timing:comb_7|counter[11]                 ; timing:comb_7|counter[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.705      ;
+; -8.037 ; timing:comb_7|counter[11]                 ; timing:comb_7|counter[6]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.704      ;
+; -8.032 ; timing:comb_7|counter[16]                 ; timing:comb_7|counter[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.699      ;
+; -8.032 ; timing:comb_7|counter[16]                 ; timing:comb_7|counter[11]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.699      ;
+; -8.032 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[15]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.699      ;
+; -8.032 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[11]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.699      ;
+; -8.031 ; timing:comb_7|counter[16]                 ; timing:comb_7|counter[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.698      ;
+; -8.031 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[1]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.698      ;
+; -8.030 ; timing:comb_7|counter[16]                 ; timing:comb_7|counter[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.697      ;
+; -8.030 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[0]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.697      ;
+; -8.029 ; timing:comb_7|counter[16]                 ; timing:comb_7|counter[6]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.696      ;
+; -8.029 ; timing:comb_7|counter[1]                  ; timing:comb_7|counter[6]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.696      ;
+; -8.019 ; timing:comb_7|counter[6]                  ; timing:comb_7|counter[7]     ; clk          ; clk         ; 1.000        ; 0.000      ; 8.686      ;
+; -7.988 ; timing:comb_7|counter[2]                  ; timing:comb_7|counter[20]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.655      ;
+; -7.979 ; timing:comb_7|counter[12]                 ; timing:comb_7|counter[20]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.646      ;
+; -7.935 ; timing:comb_7|counter[6]                  ; timing:comb_7|counter[13]    ; clk          ; clk         ; 1.000        ; 0.000      ; 8.602      ;
++--------+-------------------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'controlOutputDisplay:comb_12|clk_counter[13]'                                                                                                                                                                                  ;
++--------+---------------------------------------------+------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                  ; Launch Clock                                 ; Latch Clock                                  ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+; -8.889 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[4]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 10.365     ;
+; -8.668 ; add_id:comb_4|row[0]                        ; controlOutputDisplay:comb_12|d[0]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 10.144     ;
+; -8.601 ; controlOutputDisplay:comb_12|d2[0]          ; controlOutputDisplay:comb_12|d[0]        ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.500        ; -5.214     ; 3.554      ;
+; -8.513 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[4]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.989      ;
+; -8.498 ; controlOutputDisplay:comb_12|d2[6]          ; controlOutputDisplay:comb_12|d[6]        ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.500        ; -5.242     ; 3.423      ;
+; -8.325 ; controlOutputDisplay:comb_12|d2[4]          ; controlOutputDisplay:comb_12|d[4]        ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.500        ; -5.240     ; 3.252      ;
+; -8.281 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[5]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.757      ;
+; -8.273 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[0]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.749      ;
+; -8.230 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[6]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.706      ;
+; -8.081 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[4]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.557      ;
+; -8.078 ; controlOutputDisplay:comb_12|d2[3]          ; controlOutputDisplay:comb_12|d[3]        ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.500        ; -5.243     ; 3.002      ;
+; -8.072 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[6]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.548      ;
+; -8.039 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[2]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.515      ;
+; -8.019 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[5]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.495      ;
+; -7.995 ; controlOutputDisplay:comb_12|d2[5]          ; controlOutputDisplay:comb_12|d[5]        ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.500        ; -5.174     ; 2.988      ;
+; -7.978 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[6]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.454      ;
+; -7.930 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[5]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.406      ;
+; -7.899 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[5]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.375      ;
+; -7.897 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[0]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.373      ;
+; -7.891 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[1]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.367      ;
+; -7.881 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[5]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.357      ;
+; -7.732 ; add_id:comb_4|row[1]                        ; controlOutputDisplay:comb_12|d[0]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.208      ;
+; -7.663 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[2]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.139      ;
+; -7.639 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[1]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.115      ;
+; -7.612 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[4]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.088      ;
+; -7.600 ; controlOutputDisplay:comb_12|d2[2]          ; controlOutputDisplay:comb_12|d[2]        ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.500        ; -5.231     ; 2.536      ;
+; -7.595 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[3]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.071      ;
+; -7.545 ; add_id:comb_4|col[1]                        ; controlOutputDisplay:comb_12|d[5]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.021      ;
+; -7.530 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[2]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 9.006      ;
+; -7.473 ; add_id:comb_4|row[0]                        ; controlOutputDisplay:comb_12|d[3]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.949      ;
+; -7.467 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[6]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.943      ;
+; -7.465 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[0]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.941      ;
+; -7.456 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[4]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.932      ;
+; -7.298 ; controlOutputDisplay:comb_12|d2[1]          ; controlOutputDisplay:comb_12|d[1]        ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.500        ; -5.230     ; 2.235      ;
+; -7.264 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[6]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.740      ;
+; -7.231 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[2]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.707      ;
+; -7.219 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[3]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.695      ;
+; -7.159 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[3]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.635      ;
+; -7.155 ; add_id:comb_4|row[1]                        ; controlOutputDisplay:comb_12|d[5]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.631      ;
+; -7.076 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[1]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.552      ;
+; -7.033 ; add_id:comb_4|col[1]                        ; controlOutputDisplay:comb_12|d[0]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.509      ;
+; -7.029 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[0]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.505      ;
+; -6.922 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[4]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.398      ;
+; -6.840 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[0]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.316      ;
+; -6.824 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[7]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.300      ;
+; -6.787 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[3]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.263      ;
+; -6.779 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[4]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.255      ;
+; -6.705 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[2]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.181      ;
+; -6.606 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[2]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.082      ;
+; -6.584 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[4]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.060      ;
+; -6.537 ; add_id:comb_4|row[1]                        ; controlOutputDisplay:comb_12|d[3]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 8.013      ;
+; -6.518 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[5]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.994      ;
+; -6.443 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[0]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.919      ;
+; -6.325 ; controlOutputDisplay:comb_12|d2[7]          ; controlOutputDisplay:comb_12|d[7]        ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.500        ; -4.674     ; 1.818      ;
+; -6.306 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[0]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.782      ;
+; -6.268 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[1]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.744      ;
+; -6.242 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[4]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.718      ;
+; -6.230 ; add_id:comb_4|row[0]                        ; controlOutputDisplay:comb_12|d[5]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.706      ;
+; -6.188 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[1]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.664      ;
+; -6.163 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[0]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.639      ;
+; -6.162 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[3]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.638      ;
+; -6.151 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[2]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.627      ;
+; -6.117 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[7]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.593      ;
+; -6.104 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[1]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.580      ;
+; -6.104 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[1]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.580      ;
+; -5.976 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[6]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.452      ;
+; -5.968 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[0]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.444      ;
+; -5.965 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[2]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.441      ;
+; -5.964 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[5]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.440      ;
+; -5.918 ; add_id:comb_4|col[1]                        ; controlOutputDisplay:comb_12|d[6]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.394      ;
+; -5.838 ; add_id:comb_4|col[1]                        ; controlOutputDisplay:comb_12|d[3]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.314      ;
+; -5.820 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[1]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.296      ;
+; -5.778 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[5]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.254      ;
+; -5.744 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[7]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.220      ;
+; -5.677 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[6]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.153      ;
+; -5.634 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[1]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.110      ;
+; -5.628 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[3]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.104      ;
+; -5.612 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[6]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.088      ;
+; -5.599 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[2]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.075      ;
+; -5.551 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[7]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.027      ;
+; -5.546 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[7]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 7.022      ;
+; -5.505 ; add_id:comb_4|col[1]                        ; controlOutputDisplay:comb_12|d[2]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 6.981      ;
+; -5.485 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[3]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 6.961      ;
+; -5.412 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[5]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 6.888      ;
+; -5.290 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[3]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 6.766      ;
+; -5.248 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[3]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 6.724      ;
+; -5.190 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[7]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 6.666      ;
+; -5.189 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[6]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 6.665      ;
+; -5.161 ; add_id:comb_4|col[1]                        ; controlOutputDisplay:comb_12|d[4]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 6.637      ;
+; -5.004 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[7]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 6.480      ;
+; -4.638 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[7]        ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 6.114      ;
+; -4.374 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[4]        ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.000      ; 5.041      ;
+; -4.178 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[7]        ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.809      ; 5.654      ;
+; -4.161 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[3]        ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.000      ; 4.828      ;
+; -4.146 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|enable_d[0] ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.000      ; 4.813      ;
+; -4.039 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[0]        ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.000      ; 4.706      ;
+; -4.017 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[7]        ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.000      ; 4.684      ;
+; -3.838 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|enable_d[1] ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.000      ; 4.505      ;
+; -3.837 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|enable_d[2] ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.000      ; 4.504      ;
+; -3.836 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|enable_d[3] ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 1.000        ; 0.000      ; 4.503      ;
++--------+---------------------------------------------+------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'got_coin'                                                                                                                                              ;
++--------+-------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; -6.991 ; get_val_tot:comb_10|state.wait_pulse_down ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.658      ;
+; -6.928 ; get_val_tot:comb_10|state.penny0_25       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.595      ;
+; -6.864 ; get_val_tot:comb_10|state.penny0_50       ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.531      ;
+; -6.863 ; get_val_tot:comb_10|state.penny2          ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.530      ;
+; -6.828 ; get_val_tot:comb_10|state.penny1_50       ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.495      ;
+; -6.733 ; get_val_tot:comb_10|state.penny0_75       ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.400      ;
+; -6.723 ; get_val_tot:comb_10|state.penny0_50       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.390      ;
+; -6.687 ; get_val_tot:comb_10|state.penny1_50       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.354      ;
+; -6.548 ; get_val_tot:comb_10|state.penny0          ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.215      ;
+; -6.511 ; get_val_tot:comb_10|state.penny0_50       ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.178      ;
+; -6.471 ; get_val_tot:comb_10|state.penny2          ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.138      ;
+; -6.471 ; get_val_tot:comb_10|state.penny0_75       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.138      ;
+; -6.407 ; get_val_tot:comb_10|state.penny0          ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 7.074      ;
+; -6.286 ; get_val_tot:comb_10|state.penny1_50       ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.953      ;
+; -6.230 ; get_val_tot:comb_10|state.penny1          ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.897      ;
+; -6.217 ; get_val_tot:comb_10|state.penny0_75       ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.884      ;
+; -6.216 ; get_val_tot:comb_10|state.wait_pulse_down ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.883      ;
+; -6.137 ; get_val_tot:comb_10|state.penny1_75       ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.804      ;
+; -6.089 ; get_val_tot:comb_10|state.penny1          ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.756      ;
+; -6.088 ; get_val_tot:comb_10|state.penny2          ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.755      ;
+; -6.006 ; get_val_tot:comb_10|state.penny0          ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.673      ;
+; -5.972 ; get_val_tot:comb_10|state.penny1_25       ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.639      ;
+; -5.946 ; get_val_tot:comb_10|state.penny_invalid   ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.613      ;
+; -5.930 ; get_val_tot:comb_10|state.penny1_75       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.597      ;
+; -5.848 ; get_val_tot:comb_10|state.penny1          ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.515      ;
+; -5.820 ; get_val_tot:comb_10|state.wait_pulse_down ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.487      ;
+; -5.810 ; get_val_tot:comb_10|state.wait_pulse_down ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.477      ;
+; -5.765 ; get_val_tot:comb_10|state.penny1_25       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.432      ;
+; -5.682 ; get_val_tot:comb_10|state.penny2          ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.349      ;
+; -5.617 ; get_val_tot:comb_10|state.penny1_75       ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.284      ;
+; -5.452 ; get_val_tot:comb_10|state.penny1_25       ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.119      ;
+; -5.372 ; get_val_tot:comb_10|state.penny0_50       ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.039      ;
+; -5.341 ; get_val_tot:comb_10|state.penny1_75       ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.008      ;
+; -5.336 ; get_val_tot:comb_10|state.penny1_50       ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 6.003      ;
+; -5.328 ; get_val_tot:comb_10|state.penny1          ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 5.995      ;
+; -5.171 ; get_val_tot:comb_10|state.penny_invalid   ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 5.838      ;
+; -5.067 ; get_val_tot:comb_10|state.penny1_25       ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 5.734      ;
+; -5.056 ; get_val_tot:comb_10|state.penny0          ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 5.723      ;
+; -4.945 ; get_val_tot:comb_10|state.penny0_75       ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 5.612      ;
+; -4.775 ; get_val_tot:comb_10|state.penny_invalid   ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 5.442      ;
+; -4.765 ; get_val_tot:comb_10|state.penny_invalid   ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 1.000        ; 0.000      ; 5.432      ;
+; -1.761 ; get_next_state:comb_5|next_state[3]       ; get_next_state:comb_5|next_state[3] ; got_coin     ; got_coin    ; 1.000        ; 0.000      ; 2.428      ;
++--------+-------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'get_id:comb_9|id_typed'                                                                                                                               ;
++--------+----------------------+--------------------------------------+----------------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node            ; To Node                              ; Launch Clock         ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------+--------------------------------------+----------------------+------------------------+--------------+------------+------------+
+; -4.673 ; add_id:comb_4|col[1] ; comparator_id:comb_11|id_valid       ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; -0.415     ; 4.925      ;
+; -4.311 ; add_id:comb_4|row[1] ; comparator_id:comb_11|id_valid       ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; -0.415     ; 4.563      ;
+; -4.157 ; add_id:comb_4|row[1] ; comparator_id:comb_11|val_product[1] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; 0.229      ; 5.053      ;
+; -4.150 ; add_id:comb_4|row[0] ; comparator_id:comb_11|val_product[0] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; 0.229      ; 5.046      ;
+; -4.115 ; add_id:comb_4|col[1] ; comparator_id:comb_11|val_product[2] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; -0.400     ; 4.382      ;
+; -4.037 ; add_id:comb_4|col[1] ; comparator_id:comb_11|val_product[0] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; 0.229      ; 4.933      ;
+; -4.005 ; add_id:comb_4|row[0] ; comparator_id:comb_11|id_valid       ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; -0.415     ; 4.257      ;
+; -3.785 ; add_id:comb_4|row[0] ; comparator_id:comb_11|val_product[1] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; 0.229      ; 4.681      ;
+; -3.575 ; add_id:comb_4|row[1] ; comparator_id:comb_11|val_product[2] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; -0.400     ; 3.842      ;
+; -3.486 ; add_id:comb_4|row[1] ; comparator_id:comb_11|val_product[0] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; 0.229      ; 4.382      ;
+; -3.467 ; add_id:comb_4|col[1] ; comparator_id:comb_11|val_product[1] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; 0.229      ; 4.363      ;
+; -3.035 ; add_id:comb_4|row[1] ; comparator_id:comb_11|val_product[3] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; -0.415     ; 3.287      ;
+; -3.002 ; add_id:comb_4|row[0] ; comparator_id:comb_11|val_product[2] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; -0.400     ; 3.269      ;
+; -2.838 ; add_id:comb_4|row[0] ; comparator_id:comb_11|val_product[3] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; -0.415     ; 3.090      ;
+; -2.518 ; add_id:comb_4|col[1] ; comparator_id:comb_11|val_product[3] ; clk                  ; get_id:comb_9|id_typed ; 1.000        ; -0.415     ; 2.770      ;
+; -1.983 ; add_id:comb_4|col[0] ; comparator_id:comb_11|id_valid       ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 0.500        ; 2.933      ; 5.459      ;
+; -1.483 ; add_id:comb_4|col[0] ; comparator_id:comb_11|id_valid       ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 1.000        ; 2.933      ; 5.459      ;
+; -1.425 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[2] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 0.500        ; 2.948      ; 4.916      ;
+; -0.925 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[2] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 1.000        ; 2.948      ; 4.916      ;
+; -0.777 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[1] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 0.500        ; 3.577      ; 4.897      ;
+; -0.625 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[0] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 0.500        ; 3.577      ; 4.745      ;
+; -0.509 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[3] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 0.500        ; 2.933      ; 3.985      ;
+; -0.277 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[1] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 1.000        ; 3.577      ; 4.897      ;
+; -0.125 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[0] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 1.000        ; 3.577      ; 4.745      ;
+; -0.009 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[3] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 1.000        ; 2.933      ; 3.985      ;
++--------+----------------------+--------------------------------------+----------------------+------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'add_id:comb_4|col[0]'                                                                                                                                    ;
++--------+-------------------------------------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; -4.610 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 8.590      ;
+; -4.407 ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 8.478      ;
+; -4.296 ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 8.367      ;
+; -4.294 ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[1] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.039      ; 8.809      ;
+; -4.234 ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 8.214      ;
+; -4.199 ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[7] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.483      ; 8.526      ;
+; -4.184 ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 8.255      ;
+; -4.061 ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[7] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.483      ; 8.388      ;
+; -4.044 ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 8.115      ;
+; -4.042 ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[1] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.039      ; 8.557      ;
+; -4.020 ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 8.000      ;
+; -4.004 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 8.075      ;
+; -3.995 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 8.501      ;
+; -3.802 ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 7.782      ;
+; -3.777 ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 7.757      ;
+; -3.727 ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 7.707      ;
+; -3.705 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[7] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.483      ; 8.032      ;
+; -3.696 ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.051      ; 8.213      ;
+; -3.668 ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 8.205      ;
+; -3.619 ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 8.125      ;
+; -3.444 ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.051      ; 7.961      ;
+; -3.423 ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 7.929      ;
+; -3.416 ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 7.953      ;
+; -3.129 ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 7.635      ;
+; -3.054 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.051      ; 7.571      ;
+; -3.011 ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.051      ; 7.528      ;
+; -2.989 ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 7.526      ;
+; -2.961 ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[7] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.483      ; 7.288      ;
+; -2.911 ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 7.417      ;
+; -2.852 ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[5] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 6.832      ;
+; -2.767 ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 7.273      ;
+; -2.709 ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[7] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.483      ; 7.036      ;
+; -2.703 ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 6.774      ;
+; -2.667 ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 7.185      ;
+; -2.660 ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[1] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.039      ; 7.175      ;
+; -2.629 ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 7.147      ;
+; -2.568 ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[5] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 6.548      ;
+; -2.559 ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[4] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 6.630      ;
+; -2.534 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 7.071      ;
+; -2.494 ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.051      ; 7.011      ;
+; -2.418 ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[4] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 6.489      ;
+; -2.415 ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 6.933      ;
+; -2.383 ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.051      ; 6.900      ;
+; -2.269 ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 6.249      ;
+; -2.231 ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[4] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 6.302      ;
+; -2.225 ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[5] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 6.205      ;
+; -2.209 ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 6.715      ;
+; -2.183 ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 6.720      ;
+; -2.029 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[1] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.039      ; 6.544      ;
+; -1.939 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[5] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 5.983      ; 5.919      ;
+; -1.888 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[4] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 5.959      ;
+; -1.836 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 6.354      ;
+; -1.811 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[0] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 6.329      ;
+; -1.794 ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[2] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 6.300      ;
+; -1.785 ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.049      ; 5.856      ;
+; -1.710 ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.051      ; 6.227      ;
+; -1.678 ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[1] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.039      ; 6.193      ;
+; -1.519 ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[2] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 6.025      ;
+; -1.452 ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 5.970      ;
+; -1.423 ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[1] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.039      ; 5.938      ;
+; -1.257 ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[0] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 5.775      ;
+; -1.167 ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[2] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 5.673      ;
+; -1.163 ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 5.681      ;
+; -1.102 ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[1] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.039      ; 5.617      ;
+; -1.072 ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[1] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.039      ; 5.587      ;
+; -1.071 ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[0] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 5.589      ;
+; -0.970 ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 5.507      ;
+; -0.906 ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[6] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.051      ; 5.423      ;
+; -0.890 ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[3] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 5.427      ;
+; -0.884 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[2] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.040      ; 5.390      ;
+; -0.774 ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 5.292      ;
+; -0.705 ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[0] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.023      ; 5.223      ;
+; -0.632 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[1] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.039      ; 5.147      ;
+; -0.528 ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[3] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 5.065      ;
+; -0.519 ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 5.056      ;
+; -0.475 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[6] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.051      ; 4.992      ;
+; -0.456 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[3] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 4.993      ;
+; -0.218 ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[6] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.051      ; 4.735      ;
+; -0.189 ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[3] ; got_coin     ; add_id:comb_4|col[0] ; 0.500        ; 6.052      ; 4.726      ;
++--------+-------------------------------------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'add_id:comb_4|col[0]'                                                                                                                                     ;
++--------+-------------------------------------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; -2.990 ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 2.559      ;
+; -0.938 ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 4.585      ;
+; -0.826 ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[3] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 4.726      ;
+; -0.816 ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[6] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.051      ; 4.735      ;
+; -0.780 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 4.743      ;
+; -0.638 ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 4.914      ;
+; -0.559 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[3] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 4.993      ;
+; -0.559 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[6] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.051      ; 4.992      ;
+; -0.514 ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 5.009      ;
+; -0.496 ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 5.056      ;
+; -0.487 ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[3] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 5.065      ;
+; -0.392 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[1] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.039      ; 5.147      ;
+; -0.300 ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[0] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 5.223      ;
+; -0.287 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 5.265      ;
+; -0.231 ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 5.292      ;
+; -0.150 ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[2] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 5.390      ;
+; -0.128 ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[6] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.051      ; 5.423      ;
+; -0.125 ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[3] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 5.427      ;
+; -0.117 ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.051      ; 5.434      ;
+; -0.045 ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 5.507      ;
+; 0.006  ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 5.555      ;
+; 0.043  ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 5.592      ;
+; 0.048  ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[1] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.039      ; 5.587      ;
+; 0.066  ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[0] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 5.589      ;
+; 0.078  ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[1] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.039      ; 5.617      ;
+; 0.092  ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.051      ; 5.643      ;
+; 0.133  ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[2] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 5.673      ;
+; 0.158  ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 5.681      ;
+; 0.252  ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[0] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 5.775      ;
+; 0.270  ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 5.819      ;
+; 0.307  ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 5.856      ;
+; 0.399  ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[1] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.039      ; 5.938      ;
+; 0.410  ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[4] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 5.959      ;
+; 0.436  ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[5] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 5.919      ;
+; 0.447  ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 5.970      ;
+; 0.485  ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[2] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 6.025      ;
+; 0.654  ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[1] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.039      ; 6.193      ;
+; 0.676  ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.051      ; 6.227      ;
+; 0.722  ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[5] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 6.205      ;
+; 0.753  ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[4] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 6.302      ;
+; 0.760  ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[2] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 6.300      ;
+; 0.766  ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 6.249      ;
+; 0.806  ; get_next_state:comb_5|next_state[3] ; controlOutputDisplay:comb_12|d2[0] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 6.329      ;
+; 0.843  ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[1] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.039      ; 6.382      ;
+; 0.940  ; get_next_state:comb_5|next_state[2] ; controlOutputDisplay:comb_12|d2[4] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 6.489      ;
+; 1.051  ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[7] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.483      ; 6.034      ;
+; 1.052  ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[1] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.039      ; 6.591      ;
+; 1.063  ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 6.612      ;
+; 1.065  ; get_next_state:comb_5|next_state[0] ; controlOutputDisplay:comb_12|d2[5] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 6.548      ;
+; 1.081  ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[4] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 6.630      ;
+; 1.128  ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.051      ; 6.679      ;
+; 1.175  ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 6.715      ;
+; 1.203  ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 6.686      ;
+; 1.225  ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[4] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.049      ; 6.774      ;
+; 1.302  ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 6.842      ;
+; 1.345  ; maquina4:comb_6|state.validate_coin ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 6.828      ;
+; 1.349  ; add_id:comb_4|row[0]                ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.051      ; 6.900      ;
+; 1.349  ; get_next_state:comb_5|next_state[1] ; controlOutputDisplay:comb_12|d2[5] ; got_coin     ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 6.832      ;
+; 1.390  ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 6.942      ;
+; 1.410  ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[0] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.023      ; 6.933      ;
+; 1.511  ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 7.051      ;
+; 1.528  ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 7.068      ;
+; 1.554  ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 7.037      ;
+; 1.636  ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[1] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.039      ; 7.175      ;
+; 1.674  ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 7.157      ;
+; 1.877  ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 7.417      ;
+; 1.974  ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 7.526      ;
+; 1.977  ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.051      ; 7.528      ;
+; 2.053  ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[7] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.483      ; 7.036      ;
+; 2.095  ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 7.635      ;
+; 2.138  ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 7.621      ;
+; 2.153  ; maquina4:comb_6|state.all_ok        ; controlOutputDisplay:comb_12|d2[2] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.040      ; 7.693      ;
+; 2.224  ; add_id:comb_4|row[1]                ; controlOutputDisplay:comb_12|d2[5] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.983      ; 7.707      ;
+; 2.305  ; maquina4:comb_6|state.error1        ; controlOutputDisplay:comb_12|d2[7] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.483      ; 7.288      ;
+; 2.401  ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[3] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.052      ; 7.953      ;
+; 2.410  ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[6] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.051      ; 7.961      ;
+; 3.018  ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[1] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 6.039      ; 8.557      ;
+; 3.405  ; maquina4:comb_6|state.zzz           ; controlOutputDisplay:comb_12|d2[7] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.483      ; 8.388      ;
+; 3.543  ; maquina4:comb_6|state.error2        ; controlOutputDisplay:comb_12|d2[7] ; clk          ; add_id:comb_4|col[0] ; -0.500       ; 5.483      ; 8.526      ;
++--------+-------------------------------------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                                                ;
++--------+----------------------------------------------+----------------------------------------------+----------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock                                 ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+----------------------------------------------+-------------+--------------+------------+------------+
+; -1.800 ; get_id:comb_9|id_typed                       ; get_id:comb_9|id_typed                       ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 2.145      ;
+; -1.676 ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; clk         ; 0.000        ; 3.348      ; 2.269      ;
+; -1.300 ; get_id:comb_9|id_typed                       ; get_id:comb_9|id_typed                       ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 2.145      ;
+; -1.176 ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; clk         ; -0.500       ; 3.348      ; 2.269      ;
+; -0.885 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[23]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.060      ;
+; -0.885 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[22]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.060      ;
+; -0.867 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[15]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.078      ;
+; -0.862 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[1]                     ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.083      ;
+; -0.857 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[0]                     ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.088      ;
+; -0.852 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[6]                     ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.093      ;
+; -0.848 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[11]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.097      ;
+; -0.841 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[16]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.104      ;
+; -0.840 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[2]                     ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.105      ;
+; -0.838 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[14]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.107      ;
+; -0.837 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[9]                     ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.108      ;
+; -0.836 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[13]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.109      ;
+; -0.813 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[21]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.132      ;
+; -0.806 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[18]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.139      ;
+; -0.803 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[20]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.142      ;
+; -0.800 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[12]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.145      ;
+; -0.797 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[7]                     ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.148      ;
+; -0.792 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[8]                     ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.153      ;
+; -0.791 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[17]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.154      ;
+; -0.790 ; get_id:comb_9|id_typed                       ; timing:comb_7|start_time_ex                  ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.155      ;
+; -0.651 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[19]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.294      ;
+; -0.646 ; get_id:comb_9|id_typed                       ; maquina4:comb_6|state.validate_id            ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.299      ;
+; -0.644 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[10]                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.301      ;
+; -0.385 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[23]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.060      ;
+; -0.385 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[22]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.060      ;
+; -0.367 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[15]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.078      ;
+; -0.366 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[5]                     ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.579      ;
+; -0.365 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[3]                     ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.580      ;
+; -0.362 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[1]                     ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.083      ;
+; -0.357 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[0]                     ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.088      ;
+; -0.352 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[6]                     ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.093      ;
+; -0.348 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[11]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.097      ;
+; -0.341 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[16]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.104      ;
+; -0.340 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[2]                     ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.105      ;
+; -0.338 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[14]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.107      ;
+; -0.337 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[9]                     ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.108      ;
+; -0.336 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[13]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.109      ;
+; -0.313 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[21]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.132      ;
+; -0.306 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[18]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.139      ;
+; -0.303 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[20]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.142      ;
+; -0.300 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[12]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.145      ;
+; -0.297 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[7]                     ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.148      ;
+; -0.292 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[8]                     ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.153      ;
+; -0.291 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[17]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.154      ;
+; -0.290 ; get_id:comb_9|id_typed                       ; timing:comb_7|start_time_ex                  ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.155      ;
+; -0.183 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[4]                     ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.762      ;
+; -0.163 ; get_id:comb_9|id_typed                       ; timing:comb_7|time_max_exb                   ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 3.782      ;
+; -0.151 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[19]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.294      ;
+; -0.146 ; get_id:comb_9|id_typed                       ; maquina4:comb_6|state.validate_id            ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.299      ;
+; -0.144 ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[10]                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.301      ;
+; 0.134  ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[5]                     ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.579      ;
+; 0.135  ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[3]                     ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.580      ;
+; 0.190  ; get_id:comb_9|id_typed                       ; maquina4:comb_6|state.zzz                    ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 3.348      ; 4.135      ;
+; 0.317  ; get_id:comb_9|id_typed                       ; timing:comb_7|counter[4]                     ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.762      ;
+; 0.337  ; get_id:comb_9|id_typed                       ; timing:comb_7|time_max_exb                   ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 3.782      ;
+; 0.690  ; get_id:comb_9|id_typed                       ; maquina4:comb_6|state.zzz                    ; get_id:comb_9|id_typed                       ; clk         ; -0.500       ; 3.348      ; 4.135      ;
+; 1.078  ; timing:comb_7|start_time_ex                  ; timing:comb_7|start_time_ex                  ; clk                                          ; clk         ; 0.000        ; 0.000      ; 1.299      ;
+; 1.258  ; got_coin                                     ; get_val_tot:comb_10|state.penny0_25          ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 4.827      ;
+; 1.264  ; comparator_id:comb_11|id_valid               ; maquina4:comb_6|state.validate_coin          ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 0.415      ; 1.900      ;
+; 1.264  ; comparator_id:comb_11|id_valid               ; maquina4:comb_6|state.error1                 ; get_id:comb_9|id_typed                       ; clk         ; 0.000        ; 0.415      ; 1.900      ;
+; 1.315  ; got_coin                                     ; get_val_tot:comb_10|state.penny1_75          ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 4.884      ;
+; 1.361  ; got_coin                                     ; get_val_tot:comb_10|state.penny0_50          ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 4.930      ;
+; 1.391  ; got_coin                                     ; get_val_tot:comb_10|state.penny0_75          ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 4.960      ;
+; 1.395  ; got_coin                                     ; get_val_tot:comb_10|state.penny_invalid      ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 4.964      ;
+; 1.400  ; got_coin                                     ; get_val_tot:comb_10|state.penny2             ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 4.969      ;
+; 1.473  ; got_coin                                     ; get_val_tot:comb_10|state.penny0             ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 5.042      ;
+; 1.507  ; got_coin                                     ; get_val_tot:comb_10|state.penny1_50          ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 5.076      ;
+; 1.512  ; got_coin                                     ; get_val_tot:comb_10|state.penny1             ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 5.081      ;
+; 1.520  ; got_coin                                     ; get_val_tot:comb_10|state.penny1_25          ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 5.089      ;
+; 1.646  ; timing:comb_7|start_time_ex                  ; timing:comb_7|time_max_exb                   ; clk                                          ; clk         ; 0.000        ; 0.000      ; 1.867      ;
+; 1.649  ; maquina4:comb_6|state.validate_id            ; maquina4:comb_6|state.validate_id            ; clk                                          ; clk         ; 0.000        ; 0.000      ; 1.870      ;
+; 1.667  ; controlOutputDisplay:comb_12|clk_counter[0]  ; controlOutputDisplay:comb_12|clk_counter[0]  ; clk                                          ; clk         ; 0.000        ; 0.000      ; 1.888      ;
+; 1.685  ; maquina4:comb_6|release_product              ; maquina4:comb_6|release_product              ; clk                                          ; clk         ; 0.000        ; 0.000      ; 1.906      ;
+; 1.688  ; maquina4:comb_6|back_money                   ; maquina4:comb_6|back_money                   ; clk                                          ; clk         ; 0.000        ; 0.000      ; 1.909      ;
+; 1.705  ; got_coin                                     ; get_val_tot:comb_10|state.wait_pulse_down    ; got_coin                                     ; clk         ; 0.000        ; 3.348      ; 5.274      ;
+; 1.714  ; get_id:comb_9|state.add_col                  ; get_id:comb_9|state.add_row                  ; clk                                          ; clk         ; 0.000        ; 0.000      ; 1.935      ;
+; 1.715  ; get_id:comb_9|state.add_col                  ; get_id:comb_9|state.wait_button_down         ; clk                                          ; clk         ; 0.000        ; 0.000      ; 1.936      ;
+; 1.721  ; get_id:comb_9|state.add_col                  ; get_id:comb_9|id_typed                       ; clk                                          ; clk         ; 0.000        ; 0.000      ; 1.942      ;
+; 1.758  ; got_coin                                     ; get_val_tot:comb_10|state.penny0_25          ; got_coin                                     ; clk         ; -0.500       ; 3.348      ; 4.827      ;
+; 1.815  ; got_coin                                     ; get_val_tot:comb_10|state.penny1_75          ; got_coin                                     ; clk         ; -0.500       ; 3.348      ; 4.884      ;
+; 1.861  ; got_coin                                     ; get_val_tot:comb_10|state.penny0_50          ; got_coin                                     ; clk         ; -0.500       ; 3.348      ; 4.930      ;
+; 1.891  ; got_coin                                     ; get_val_tot:comb_10|state.penny0_75          ; got_coin                                     ; clk         ; -0.500       ; 3.348      ; 4.960      ;
+; 1.895  ; got_coin                                     ; get_val_tot:comb_10|state.penny_invalid      ; got_coin                                     ; clk         ; -0.500       ; 3.348      ; 4.964      ;
+; 1.899  ; get_val_tot:comb_10|state.penny2             ; get_val_tot:comb_10|state.penny2             ; clk                                          ; clk         ; 0.000        ; 0.000      ; 2.120      ;
+; 1.900  ; got_coin                                     ; get_val_tot:comb_10|state.penny2             ; got_coin                                     ; clk         ; -0.500       ; 3.348      ; 4.969      ;
+; 1.907  ; get_val_tot:comb_10|state.penny0_25          ; get_val_tot:comb_10|state.penny0_25          ; clk                                          ; clk         ; 0.000        ; 0.000      ; 2.128      ;
+; 1.908  ; get_val_tot:comb_10|state.penny0_50          ; get_val_tot:comb_10|state.penny0_50          ; clk                                          ; clk         ; 0.000        ; 0.000      ; 2.129      ;
+; 1.908  ; get_val_tot:comb_10|state.penny0             ; get_val_tot:comb_10|state.penny0             ; clk                                          ; clk         ; 0.000        ; 0.000      ; 2.129      ;
+; 1.918  ; get_val_tot:comb_10|state.penny1_50          ; get_val_tot:comb_10|state.penny1_50          ; clk                                          ; clk         ; 0.000        ; 0.000      ; 2.139      ;
+; 1.923  ; get_id:comb_9|state.wait_button_down         ; get_id:comb_9|state.wait_id                  ; clk                                          ; clk         ; 0.000        ; 0.000      ; 2.144      ;
+; 1.939  ; get_id:comb_9|state.wait_id                  ; get_id:comb_9|state.add_col                  ; clk                                          ; clk         ; 0.000        ; 0.000      ; 2.160      ;
+; 1.973  ; got_coin                                     ; get_val_tot:comb_10|state.penny0             ; got_coin                                     ; clk         ; -0.500       ; 3.348      ; 5.042      ;
+; 2.007  ; got_coin                                     ; get_val_tot:comb_10|state.penny1_50          ; got_coin                                     ; clk         ; -0.500       ; 3.348      ; 5.076      ;
+; 2.012  ; got_coin                                     ; get_val_tot:comb_10|state.penny1             ; got_coin                                     ; clk         ; -0.500       ; 3.348      ; 5.081      ;
+; 2.020  ; got_coin                                     ; get_val_tot:comb_10|state.penny1_25          ; got_coin                                     ; clk         ; -0.500       ; 3.348      ; 5.089      ;
+; 2.025  ; timing:comb_7|start_time_ex                  ; timing:comb_7|counter[8]                     ; clk                                          ; clk         ; 0.000        ; 0.000      ; 2.246      ;
++--------+----------------------------------------------+----------------------------------------------+----------------------------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'get_id:comb_9|id_typed'                                                                                                                               ;
++-------+----------------------+--------------------------------------+----------------------+------------------------+--------------+------------+------------+
+; Slack ; From Node            ; To Node                              ; Launch Clock         ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------+--------------------------------------+----------------------+------------------------+--------------+------------+------------+
+; 0.426 ; add_id:comb_4|col[0] ; comparator_id:comb_11|id_valid       ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 0.000        ; 2.933      ; 3.956      ;
+; 0.455 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[3] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 0.000        ; 2.933      ; 3.985      ;
+; 0.571 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[0] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 0.000        ; 3.577      ; 4.745      ;
+; 0.723 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[1] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 0.000        ; 3.577      ; 4.897      ;
+; 0.926 ; add_id:comb_4|col[0] ; comparator_id:comb_11|id_valid       ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; -0.500       ; 2.933      ; 3.956      ;
+; 0.955 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[3] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; -0.500       ; 2.933      ; 3.985      ;
+; 1.071 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[0] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; -0.500       ; 3.577      ; 4.745      ;
+; 1.223 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[1] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; -0.500       ; 3.577      ; 4.897      ;
+; 1.371 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[2] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; 0.000        ; 2.948      ; 4.916      ;
+; 1.871 ; add_id:comb_4|col[0] ; comparator_id:comb_11|val_product[2] ; add_id:comb_4|col[0] ; get_id:comb_9|id_typed ; -0.500       ; 2.948      ; 4.916      ;
+; 2.964 ; add_id:comb_4|col[1] ; comparator_id:comb_11|val_product[3] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; -0.415     ; 2.770      ;
+; 3.284 ; add_id:comb_4|row[0] ; comparator_id:comb_11|val_product[3] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; -0.415     ; 3.090      ;
+; 3.448 ; add_id:comb_4|row[0] ; comparator_id:comb_11|val_product[2] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; -0.400     ; 3.269      ;
+; 3.481 ; add_id:comb_4|row[1] ; comparator_id:comb_11|val_product[3] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; -0.415     ; 3.287      ;
+; 3.787 ; add_id:comb_4|row[1] ; comparator_id:comb_11|id_valid       ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; -0.415     ; 3.593      ;
+; 3.884 ; add_id:comb_4|col[1] ; comparator_id:comb_11|id_valid       ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; -0.415     ; 3.690      ;
+; 3.913 ; add_id:comb_4|col[1] ; comparator_id:comb_11|val_product[1] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; 0.229      ; 4.363      ;
+; 3.932 ; add_id:comb_4|row[1] ; comparator_id:comb_11|val_product[0] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; 0.229      ; 4.382      ;
+; 4.006 ; add_id:comb_4|row[0] ; comparator_id:comb_11|id_valid       ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; -0.415     ; 3.812      ;
+; 4.021 ; add_id:comb_4|row[1] ; comparator_id:comb_11|val_product[2] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; -0.400     ; 3.842      ;
+; 4.231 ; add_id:comb_4|row[0] ; comparator_id:comb_11|val_product[1] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; 0.229      ; 4.681      ;
+; 4.483 ; add_id:comb_4|col[1] ; comparator_id:comb_11|val_product[0] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; 0.229      ; 4.933      ;
+; 4.561 ; add_id:comb_4|col[1] ; comparator_id:comb_11|val_product[2] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; -0.400     ; 4.382      ;
+; 4.596 ; add_id:comb_4|row[0] ; comparator_id:comb_11|val_product[0] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; 0.229      ; 5.046      ;
+; 4.603 ; add_id:comb_4|row[1] ; comparator_id:comb_11|val_product[1] ; clk                  ; get_id:comb_9|id_typed ; 0.000        ; 0.229      ; 5.053      ;
++-------+----------------------+--------------------------------------+----------------------+------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'controlOutputDisplay:comb_12|clk_counter[13]'                                                                                                                                                                                     ;
++-------+---------------------------------------------+---------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                     ; Launch Clock                                 ; Latch Clock                                  ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+---------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+; 1.927 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 2.148      ;
+; 1.987 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[3]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 4.157      ; 6.741      ;
+; 2.160 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 2.381      ;
+; 2.229 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[4]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 4.157      ; 6.983      ;
+; 2.469 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[6]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 4.157      ; 7.223      ;
+; 2.487 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[3]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; -0.500       ; 4.157      ; 6.741      ;
+; 2.536 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[2]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 2.757      ;
+; 2.573 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[2]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 4.157      ; 7.327      ;
+; 2.729 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[4]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; -0.500       ; 4.157      ; 6.983      ;
+; 2.873 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|d[7]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 3.094      ;
+; 2.969 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[6]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; -0.500       ; 4.157      ; 7.223      ;
+; 3.001 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 3.222      ;
+; 3.073 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[2]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; -0.500       ; 4.157      ; 7.327      ;
+; 3.182 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[0]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 4.157      ; 7.936      ;
+; 3.269 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[5]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 4.157      ; 8.023      ;
+; 3.328 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|d[1]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 3.549      ;
+; 3.332 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|d[2]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 3.553      ;
+; 3.336 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|d[5]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 3.557      ;
+; 3.478 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|enable_d[3]    ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 3.699      ;
+; 3.479 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|enable_d[1]    ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 3.700      ;
+; 3.479 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|enable_d[2]    ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 3.700      ;
+; 3.497 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[3]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 3.718      ;
+; 3.513 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|d[0]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 3.734      ;
+; 3.682 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[0]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; -0.500       ; 4.157      ; 7.936      ;
+; 3.769 ; add_id:comb_4|col[0]                        ; controlOutputDisplay:comb_12|d[5]           ; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; -0.500       ; 4.157      ; 8.023      ;
+; 3.794 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|d[3]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.015      ;
+; 3.813 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[4]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.034      ;
+; 3.831 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[7]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 4.861      ;
+; 3.858 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[1]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.079      ;
+; 3.864 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[5]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.085      ;
+; 3.928 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[6]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 4.958      ;
+; 3.971 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[6]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.192      ;
+; 4.031 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[7]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.252      ;
+; 4.040 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[7]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 5.070      ;
+; 4.073 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|d[4]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.294      ;
+; 4.104 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[6]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 5.134      ;
+; 4.121 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|d[6]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.342      ;
+; 4.204 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|d[0]           ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.425      ;
+; 4.229 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|enable_d[0]    ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.450      ;
+; 4.282 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|enable_d[3]    ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.503      ;
+; 4.283 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|enable_d[2]    ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.504      ;
+; 4.284 ; controlOutputDisplay:comb_12|interator_d[0] ; controlOutputDisplay:comb_12|enable_d[1]    ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.505      ;
+; 4.416 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[2]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 5.446      ;
+; 4.588 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[3]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 5.618      ;
+; 4.592 ; controlOutputDisplay:comb_12|interator_d[1] ; controlOutputDisplay:comb_12|enable_d[0]    ; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.000      ; 4.813      ;
+; 4.624 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[7]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 5.654      ;
+; 4.642 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[1]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 5.672      ;
+; 4.918 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[1]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 5.948      ;
+; 4.954 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[3]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 5.984      ;
+; 5.038 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[3]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.068      ;
+; 5.043 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[4]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.073      ;
+; 5.084 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[7]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.114      ;
+; 5.140 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[3]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.170      ;
+; 5.220 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[5]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.250      ;
+; 5.295 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[4]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.325      ;
+; 5.326 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[5]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.356      ;
+; 5.329 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[5]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.359      ;
+; 5.378 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[5]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.408      ;
+; 5.394 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[3]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.424      ;
+; 5.450 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[7]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.480      ;
+; 5.487 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[3]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.517      ;
+; 5.525 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[7]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.555      ;
+; 5.527 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[1]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.557      ;
+; 5.528 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[1]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.558      ;
+; 5.592 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[6]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.622      ;
+; 5.599 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[3]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.629      ;
+; 5.602 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[5]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.632      ;
+; 5.607 ; add_id:comb_4|col[1]                        ; controlOutputDisplay:comb_12|d[4]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.637      ;
+; 5.636 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[7]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.666      ;
+; 5.637 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[1]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.667      ;
+; 5.644 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[5]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.674      ;
+; 5.680 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[1]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.710      ;
+; 5.696 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[3]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.726      ;
+; 5.739 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[5]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.769      ;
+; 5.783 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[0]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.813      ;
+; 5.787 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[4]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.817      ;
+; 5.801 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[7]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.831      ;
+; 5.858 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[5]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.888      ;
+; 5.868 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[6]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.898      ;
+; 5.873 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[0]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.903      ;
+; 5.878 ; maquina4:comb_6|state.error2                ; controlOutputDisplay:comb_12|d[2]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.908      ;
+; 5.894 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[1]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.924      ;
+; 5.923 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[1]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.953      ;
+; 5.947 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[6]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.977      ;
+; 5.951 ; add_id:comb_4|col[1]                        ; controlOutputDisplay:comb_12|d[2]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 6.981      ;
+; 6.045 ; get_next_state:comb_5|next_state[1]         ; controlOutputDisplay:comb_12|d[2]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.075      ;
+; 6.058 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[6]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.088      ;
+; 6.072 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[0]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.102      ;
+; 6.073 ; get_next_state:comb_5|next_state[2]         ; controlOutputDisplay:comb_12|d[4]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.103      ;
+; 6.149 ; maquina4:comb_6|state.all_ok                ; controlOutputDisplay:comb_12|d[0]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.179      ;
+; 6.149 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[0]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.179      ;
+; 6.156 ; maquina4:comb_6|state.error1                ; controlOutputDisplay:comb_12|d[6]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.186      ;
+; 6.190 ; get_next_state:comb_5|next_state[3]         ; controlOutputDisplay:comb_12|d[7]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.220      ;
+; 6.224 ; get_next_state:comb_5|next_state[0]         ; controlOutputDisplay:comb_12|d[5]           ; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.254      ;
+; 6.247 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[2]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.277      ;
+; 6.249 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[1]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.279      ;
+; 6.280 ; maquina4:comb_6|state.zzz                   ; controlOutputDisplay:comb_12|d[3]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.310      ;
+; 6.284 ; add_id:comb_4|col[1]                        ; controlOutputDisplay:comb_12|d[3]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.314      ;
+; 6.285 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[4]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.315      ;
+; 6.287 ; maquina4:comb_6|state.validate_coin         ; controlOutputDisplay:comb_12|d[2]           ; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 0.000        ; 0.809      ; 7.317      ;
++-------+---------------------------------------------+---------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'got_coin'                                                                                                                                              ;
++-------+-------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.207 ; get_next_state:comb_5|next_state[3]       ; get_next_state:comb_5|next_state[3] ; got_coin     ; got_coin    ; 0.000        ; 0.000      ; 2.428      ;
+; 2.950 ; get_val_tot:comb_10|state.wait_pulse_down ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 3.171      ;
+; 3.797 ; get_val_tot:comb_10|state.wait_pulse_down ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 4.018      ;
+; 3.983 ; get_val_tot:comb_10|state.wait_pulse_down ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 4.204      ;
+; 4.055 ; get_val_tot:comb_10|state.penny1_75       ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 4.276      ;
+; 4.216 ; get_val_tot:comb_10|state.penny1_50       ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 4.437      ;
+; 4.476 ; get_val_tot:comb_10|state.wait_pulse_down ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 4.697      ;
+; 4.515 ; get_val_tot:comb_10|state.penny1_75       ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 4.736      ;
+; 4.676 ; get_val_tot:comb_10|state.penny1_50       ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 4.897      ;
+; 4.709 ; get_val_tot:comb_10|state.penny0_50       ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 4.930      ;
+; 4.931 ; get_val_tot:comb_10|state.penny0_75       ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.152      ;
+; 5.014 ; get_val_tot:comb_10|state.penny_invalid   ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.235      ;
+; 5.169 ; get_val_tot:comb_10|state.penny0_50       ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.390      ;
+; 5.184 ; get_val_tot:comb_10|state.penny1          ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.405      ;
+; 5.211 ; get_val_tot:comb_10|state.penny_invalid   ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.432      ;
+; 5.221 ; get_val_tot:comb_10|state.penny_invalid   ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.442      ;
+; 5.261 ; get_val_tot:comb_10|state.penny1_50       ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.482      ;
+; 5.362 ; get_val_tot:comb_10|state.penny1_75       ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.583      ;
+; 5.389 ; get_val_tot:comb_10|state.penny1          ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.610      ;
+; 5.391 ; get_val_tot:comb_10|state.penny0_75       ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.612      ;
+; 5.425 ; get_val_tot:comb_10|state.penny2          ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.646      ;
+; 5.502 ; get_val_tot:comb_10|state.penny0          ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.723      ;
+; 5.513 ; get_val_tot:comb_10|state.penny1_25       ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 5.734      ;
+; 5.898 ; get_val_tot:comb_10|state.penny1_25       ; get_next_state:comb_5|next_state[0] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.119      ;
+; 5.931 ; get_val_tot:comb_10|state.penny2          ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.152      ;
+; 5.959 ; get_val_tot:comb_10|state.penny1_50       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.180      ;
+; 6.016 ; get_val_tot:comb_10|state.penny0_50       ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.237      ;
+; 6.041 ; get_val_tot:comb_10|state.penny1_75       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.262      ;
+; 6.087 ; get_val_tot:comb_10|state.penny1          ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.308      ;
+; 6.134 ; get_val_tot:comb_10|state.penny1          ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.355      ;
+; 6.138 ; get_val_tot:comb_10|state.penny2          ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.359      ;
+; 6.211 ; get_val_tot:comb_10|state.penny1_25       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.432      ;
+; 6.238 ; get_val_tot:comb_10|state.penny0_75       ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.459      ;
+; 6.242 ; get_val_tot:comb_10|state.penny0_75       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.463      ;
+; 6.392 ; get_val_tot:comb_10|state.penny_invalid   ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.613      ;
+; 6.418 ; get_val_tot:comb_10|state.penny1_25       ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.639      ;
+; 6.452 ; get_val_tot:comb_10|state.penny0          ; get_next_state:comb_5|next_state[1] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.673      ;
+; 6.592 ; get_val_tot:comb_10|state.penny0          ; get_next_state:comb_5|next_state[2] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.813      ;
+; 6.695 ; get_val_tot:comb_10|state.penny0_50       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.916      ;
+; 6.776 ; get_val_tot:comb_10|state.penny2          ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 6.997      ;
+; 6.786 ; get_val_tot:comb_10|state.penny0          ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 7.007      ;
+; 7.374 ; get_val_tot:comb_10|state.penny0_25       ; get_next_state:comb_5|next_state[3] ; clk          ; got_coin    ; 0.000        ; 0.000      ; 7.595      ;
++-------+-------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'clk'                                                                                                                                 ;
++--------+---------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.975 ; timing:comb_7|time_max_id ; get_id:comb_9|id_typed               ; clk          ; clk         ; 0.500        ; 0.000      ; 4.142      ;
+; -3.975 ; timing:comb_7|time_max_id ; get_id:comb_9|state.add_row          ; clk          ; clk         ; 0.500        ; 0.000      ; 4.142      ;
+; -3.975 ; timing:comb_7|time_max_id ; get_id:comb_9|state.add_col          ; clk          ; clk         ; 0.500        ; 0.000      ; 4.142      ;
+; -3.975 ; timing:comb_7|time_max_id ; get_id:comb_9|state.wait_button_down ; clk          ; clk         ; 0.500        ; 0.000      ; 4.142      ;
+; -3.975 ; timing:comb_7|time_max_id ; get_id:comb_9|state.wait_id          ; clk          ; clk         ; 0.500        ; 0.000      ; 4.142      ;
++--------+---------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'clk'                                                                                                                                 ;
++-------+---------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; 4.421 ; timing:comb_7|time_max_id ; get_id:comb_9|id_typed               ; clk          ; clk         ; -0.500       ; 0.000      ; 4.142      ;
+; 4.421 ; timing:comb_7|time_max_id ; get_id:comb_9|state.add_row          ; clk          ; clk         ; -0.500       ; 0.000      ; 4.142      ;
+; 4.421 ; timing:comb_7|time_max_id ; get_id:comb_9|state.add_col          ; clk          ; clk         ; -0.500       ; 0.000      ; 4.142      ;
+; 4.421 ; timing:comb_7|time_max_id ; get_id:comb_9|state.wait_button_down ; clk          ; clk         ; -0.500       ; 0.000      ; 4.142      ;
+; 4.421 ; timing:comb_7|time_max_id ; get_id:comb_9|state.wait_id          ; clk          ; clk         ; -0.500       ; 0.000      ; 4.142      ;
++-------+---------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                         ;
++----------------------------------------------+----------------------------------------------+----------+----------+----------+----------+
+; From Clock                                   ; To Clock                                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------------+----------------------------------------------+----------+----------+----------+----------+
+; clk                                          ; add_id:comb_4|col[0]                         ; 0        ; 0        ; 92       ; 0        ;
+; got_coin                                     ; add_id:comb_4|col[0]                         ; 0        ; 0        ; 27       ; 0        ;
+; clk                                          ; clk                                          ; 246      ; 6        ; 28       ; 1822     ;
+; controlOutputDisplay:comb_12|clk_counter[13] ; clk                                          ; 1        ; 1        ; 0        ; 0        ;
+; get_id:comb_9|id_typed                       ; clk                                          ; 13       ; 3        ; 26       ; 26       ;
+; got_coin                                     ; clk                                          ; 59       ; 11       ; 0        ; 0        ;
+; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 6        ; 14       ; 0        ; 0        ;
+; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 226      ; 0        ; 0        ; 0        ;
+; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 36       ; 0        ; 0        ; 0        ;
+; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 53       ; 0        ; 0        ; 0        ;
+; add_id:comb_4|col[0]                         ; get_id:comb_9|id_typed                       ; 8        ; 8        ; 0        ; 0        ;
+; clk                                          ; get_id:comb_9|id_typed                       ; 24       ; 0        ; 0        ; 0        ;
+; clk                                          ; got_coin                                     ; 99       ; 0        ; 0        ; 0        ;
+; got_coin                                     ; got_coin                                     ; 1        ; 0        ; 0        ; 0        ;
++----------------------------------------------+----------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                          ;
++----------------------------------------------+----------------------------------------------+----------+----------+----------+----------+
+; From Clock                                   ; To Clock                                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------------+----------------------------------------------+----------+----------+----------+----------+
+; clk                                          ; add_id:comb_4|col[0]                         ; 0        ; 0        ; 92       ; 0        ;
+; got_coin                                     ; add_id:comb_4|col[0]                         ; 0        ; 0        ; 27       ; 0        ;
+; clk                                          ; clk                                          ; 246      ; 6        ; 28       ; 1822     ;
+; controlOutputDisplay:comb_12|clk_counter[13] ; clk                                          ; 1        ; 1        ; 0        ; 0        ;
+; get_id:comb_9|id_typed                       ; clk                                          ; 13       ; 3        ; 26       ; 26       ;
+; got_coin                                     ; clk                                          ; 59       ; 11       ; 0        ; 0        ;
+; add_id:comb_4|col[0]                         ; controlOutputDisplay:comb_12|clk_counter[13] ; 6        ; 14       ; 0        ; 0        ;
+; clk                                          ; controlOutputDisplay:comb_12|clk_counter[13] ; 226      ; 0        ; 0        ; 0        ;
+; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; 36       ; 0        ; 0        ; 0        ;
+; got_coin                                     ; controlOutputDisplay:comb_12|clk_counter[13] ; 53       ; 0        ; 0        ; 0        ;
+; add_id:comb_4|col[0]                         ; get_id:comb_9|id_typed                       ; 8        ; 8        ; 0        ; 0        ;
+; clk                                          ; get_id:comb_9|id_typed                       ; 24       ; 0        ; 0        ; 0        ;
+; clk                                          ; got_coin                                     ; 99       ; 0        ; 0        ; 0        ;
+; got_coin                                     ; got_coin                                     ; 1        ; 0        ; 0        ; 0        ;
++----------------------------------------------+----------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 0        ; 5        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 0        ; 5        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 44    ; 44   ;
+; Unconstrained Output Ports      ; 14    ; 14   ;
+; Unconstrained Output Port Paths ; 14    ; 14   ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                             ;
++----------------------------------------------+----------------------------------------------+------+-------------+
+; Target                                       ; Clock                                        ; Type ; Status      ;
++----------------------------------------------+----------------------------------------------+------+-------------+
+; add_id:comb_4|col[0]                         ; add_id:comb_4|col[0]                         ; Base ; Constrained ;
+; clk                                          ; clk                                          ; Base ; Constrained ;
+; controlOutputDisplay:comb_12|clk_counter[13] ; controlOutputDisplay:comb_12|clk_counter[13] ; Base ; Constrained ;
+; get_id:comb_9|id_typed                       ; get_id:comb_9|id_typed                       ; Base ; Constrained ;
+; got_coin                                     ; got_coin                                     ; Base ; Constrained ;
++----------------------------------------------+----------------------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; coin[0]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; coin[1]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; coin[2]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; key_four   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; key_one    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; key_three  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; key_two    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                              ;
++-----------------+---------------------------------------------------------------------------------------+
+; Output Port     ; Comment                                                                               ;
++-----------------+---------------------------------------------------------------------------------------+
+; back_money      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[0]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[1]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[2]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[3]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[4]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[5]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[6]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[7]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enable_d[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enable_d[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enable_d[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enable_d[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; release_product ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; coin[0]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; coin[1]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; coin[2]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; key_four   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; key_one    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; key_three  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; key_two    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                              ;
++-----------------+---------------------------------------------------------------------------------------+
+; Output Port     ; Comment                                                                               ;
++-----------------+---------------------------------------------------------------------------------------+
+; back_money      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[0]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[1]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[2]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[3]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[4]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[5]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[6]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d[7]            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enable_d[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enable_d[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enable_d[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; enable_d[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; release_product ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon Jun 21 19:54:15 2021
+Info: Command: quartus_sta Circuito -c testando
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Warning (335093): The Timing Analyzer is analyzing 9 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'testando.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name controlOutputDisplay:comb_12|clk_counter[13] controlOutputDisplay:comb_12|clk_counter[13]
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name add_id:comb_4|col[0] add_id:comb_4|col[0]
+    Info (332105): create_clock -period 1.000 -name get_id:comb_9|id_typed get_id:comb_9|id_typed
+    Info (332105): create_clock -period 1.000 -name got_coin got_coin
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -9.167
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -9.167            -390.869 clk 
+    Info (332119):    -8.889             -84.861 controlOutputDisplay:comb_12|clk_counter[13] 
+    Info (332119):    -6.991             -26.398 got_coin 
+    Info (332119):    -4.673             -20.130 get_id:comb_9|id_typed 
+    Info (332119):    -4.610             -31.536 add_id:comb_4|col[0] 
+Info (332146): Worst-case hold slack is -2.990
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.990              -6.112 add_id:comb_4|col[0] 
+    Info (332119):    -1.800             -23.134 clk 
+    Info (332119):     0.426               0.000 get_id:comb_9|id_typed 
+    Info (332119):     1.927               0.000 controlOutputDisplay:comb_12|clk_counter[13] 
+    Info (332119):     2.207               0.000 got_coin 
+Info (332146): Worst-case recovery slack is -3.975
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.975             -19.875 clk 
+Info (332146): Worst-case removal slack is 4.421
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     4.421               0.000 clk 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):    -2.289              -2.289 got_coin 
+    Info (332119):     0.234               0.000 controlOutputDisplay:comb_12|clk_counter[13] 
+    Info (332119):     0.234               0.000 get_id:comb_9|id_typed 
+    Info (332119):     0.500               0.000 add_id:comb_4|col[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4684 megabytes
+    Info: Processing ended: Mon Jun 21 19:54:17 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

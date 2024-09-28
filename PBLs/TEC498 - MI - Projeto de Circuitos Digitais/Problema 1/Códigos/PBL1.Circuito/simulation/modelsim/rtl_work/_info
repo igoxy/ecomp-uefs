@@ -1,0 +1,36 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/User/Desktop/PBL.Circuito/simulation/modelsim
+vcontrolOutputDis
+!s110 1615907718
+!i10b 1
+!s100 =HBfCC@A=a>glFc?NKg@B1
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+IOoO2596f3FPUR0DINCQH62
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1615907177
+8C:/Users/User/Desktop/PBL.Circuito/controlOutputDis.v
+FC:/Users/User/Desktop/PBL.Circuito/controlOutputDis.v
+!i122 0
+L0 1 43
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1615907718.000000
+!s107 C:/Users/User/Desktop/PBL.Circuito/controlOutputDis.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/PBL.Circuito|C:/Users/User/Desktop/PBL.Circuito/controlOutputDis.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/User/Desktop/PBL.Circuito
+tCvgOpt 0
+ncontrol@output@dis

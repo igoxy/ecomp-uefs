@@ -1,0 +1,29 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -4.568
+TNS   : -97.888
+
+Type  : Setup 'controlMatriz:comb_3|clk_Counter[15]'
+Slack : -4.363
+TNS   : -36.558
+
+Type  : Hold 'clk'
+Slack : -1.607
+TNS   : -3.046
+
+Type  : Hold 'controlMatriz:comb_3|clk_Counter[15]'
+Slack : 0.581
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'controlMatriz:comb_3|clk_Counter[15]'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

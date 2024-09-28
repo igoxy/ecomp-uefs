@@ -1,0 +1,13 @@
+module controlOutputRE( 
+	input AC,
+	input CO,
+	output OUT03
+);
+
+	//wire comp01bar, comp02bar;
+	//not Inv5(comp01bar, comp01);
+	//not Inv6(comp02bar, comp02);
+	
+	and And6 (OUT03, !AC, !CO);
+	
+endmodule

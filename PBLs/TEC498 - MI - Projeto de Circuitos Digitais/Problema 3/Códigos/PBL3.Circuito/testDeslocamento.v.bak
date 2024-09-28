@@ -1,0 +1,6 @@
+module testDeslocamento(clk, y);
+	input clk;
+	output reg [0:3] y;
+	
+	always@ (clk) y = y << 1;
+endmodule

@@ -1,0 +1,299 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/User/Desktop/PBL.Circuito/simulation/qsim
+vcontrolOutputAC
+Z1 !s110 1615946880
+!i10b 1
+!s100 [W:U[R31bl[7zJ7GHJ]4W0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I^2<H8zJ?J43;53LN1KjO40
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1615946878
+Z4 8ControlPatternLength.vo
+Z5 FControlPatternLength.vo
+!i122 78
+L0 32 170
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1615946880.000000
+Z8 !s107 ControlPatternLength.vo|
+Z9 !s90 -work|work|ControlPatternLength.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+ncontrol@output@a@c
+vcontrolOutputAC_vlg_vec_tst
+R1
+!i10b 1
+!s100 IYIAeoDj`A<R^EXAnSL:^1
+R2
+I@4P66VQcK8=<kN[Xeaz8Z1
+R3
+R0
+w1615946877
+8ControlOutputAC.vwf.vt
+FControlOutputAC.vwf.vt
+!i122 79
+Z12 L0 30 66
+R6
+r1
+!s85 0
+31
+R7
+!s107 ControlOutputAC.vwf.vt|
+!s90 -work|work|ControlOutputAC.vwf.vt|
+!i113 1
+R10
+R11
+ncontrol@output@a@c_vlg_vec_tst
+vcontrolOutputAL
+Z13 !s110 1615948147
+!i10b 1
+!s100 _6h:TaZfolKd;7PYeAEIn3
+R2
+IDd^IP9G9M:e]^bOCHLM320
+R3
+R0
+w1615948146
+R4
+R5
+!i122 92
+Z14 L0 32 94
+R6
+r1
+!s85 0
+31
+Z15 !s108 1615948147.000000
+R8
+R9
+!i113 1
+R10
+R11
+ncontrol@output@a@l
+vcontrolOutputAL_vlg_vec_tst
+R13
+!i10b 1
+!s100 jTa[Qkm5Wm]JNG;ATR0<Q3
+R2
+I8f`fj<018z64WEU2WOJM=2
+R3
+R0
+w1615948144
+8ControlOutputAL.vwf.vt
+FControlOutputAL.vwf.vt
+!i122 93
+Z16 L0 30 36
+R6
+r1
+!s85 0
+31
+R15
+!s107 ControlOutputAL.vwf.vt|
+!s90 -work|work|ControlOutputAL.vwf.vt|
+!i113 1
+R10
+R11
+ncontrol@output@a@l_vlg_vec_tst
+vcontrolOutputCO
+Z17 !s110 1615947264
+!i10b 1
+!s100 O^1Z1PhGAg:hV<2>[13hc3
+R2
+Ia]90nEL>bn@;OX[SJD3FY3
+R3
+R0
+w1615947262
+R4
+R5
+!i122 80
+L0 32 207
+R6
+r1
+!s85 0
+31
+Z18 !s108 1615947264.000000
+R8
+R9
+!i113 1
+R10
+R11
+ncontrol@output@c@o
+vcontrolOutputCO_vlg_vec_tst
+R17
+!i10b 1
+!s100 6:@U1I2j3XOLR=Nfb?Unm1
+R2
+ICI50O=T_Lm]f<]YDGggcG3
+R3
+R0
+w1615947261
+8ControlOutputCO.vwf.vt
+FControlOutputCO.vwf.vt
+!i122 81
+R12
+R6
+r1
+!s85 0
+31
+R18
+!s107 ControlOutputCO.vwf.vt|
+!s90 -work|work|ControlOutputCO.vwf.vt|
+!i113 1
+R10
+R11
+ncontrol@output@c@o_vlg_vec_tst
+vcontrolOutputDis
+Z19 !s110 1615947866
+!i10b 1
+!s100 Jlifdg5EYn^]7baYnS0B=0
+R2
+I_jF[5Tc23WFak[;8LDlzL2
+R3
+R0
+w1615947864
+R4
+R5
+!i122 86
+L0 32 303
+R6
+r1
+!s85 0
+31
+Z20 !s108 1615947866.000000
+R8
+R9
+!i113 1
+R10
+R11
+ncontrol@output@dis
+vcontrolOutputDis_vlg_vec_tst
+R19
+!i10b 1
+!s100 VUJnGRT5bR;SM>T7F1KW51
+R2
+IeKUjEWjhZlcIe8dYIG0cb0
+R3
+R0
+w1615947863
+8ControlOutputDis.vwf.vt
+FControlOutputDis.vwf.vt
+!i122 87
+L0 30 68
+R6
+r1
+!s85 0
+31
+R20
+!s107 ControlOutputDis.vwf.vt|
+!s90 -work|work|ControlOutputDis.vwf.vt|
+!i113 1
+R10
+R11
+ncontrol@output@dis_vlg_vec_tst
+vcontrolOutputRE
+Z21 !s110 1615947607
+!i10b 1
+!s100 gbeW_^fhZdFOhzH<:HzFc2
+R2
+I?JHTJM_P55Ln0e_9j_m^h3
+R3
+R0
+w1615947605
+R4
+R5
+!i122 82
+R14
+R6
+r1
+!s85 0
+31
+Z22 !s108 1615947607.000000
+R8
+R9
+!i113 1
+R10
+R11
+ncontrol@output@r@e
+vcontrolOutputRE_vlg_vec_tst
+R21
+!i10b 1
+!s100 jN_bgbVz=c@A6CT[8HVFA1
+R2
+In`mD0B^7TS9fheTCzZOeB2
+R3
+R0
+w1615947604
+8ControlOutputRE.vwf.vt
+FControlOutputRE.vwf.vt
+!i122 83
+R16
+R6
+r1
+!s85 0
+31
+R22
+!s107 ControlOutputRE.vwf.vt|
+!s90 -work|work|ControlOutputRE.vwf.vt|
+!i113 1
+R10
+R11
+ncontrol@output@r@e_vlg_vec_tst
+vmainCircuit
+!s110 1615945584
+!i10b 1
+!s100 laOH5aOAVWHJlR^6@nBRA0
+R2
+Ia>ihHbX2R^5][CF9^BG]e1
+R3
+R0
+w1615945582
+R4
+R5
+!i122 75
+L0 32 489
+R6
+r1
+!s85 0
+31
+!s108 1615945584.000000
+R8
+R9
+!i113 1
+R10
+R11
+nmain@circuit
+vmainCircuit_vlg_vec_tst
+!s110 1615942510
+!i10b 1
+!s100 hF7mT8<:647N_Wnk7ASD41
+R2
+I8:lVjIeUUWfYM_>9P84lj2
+R3
+R0
+w1615942501
+8mainCircuit.vwf.vt
+FmainCircuit.vwf.vt
+!i122 74
+L0 30 90
+R6
+r1
+!s85 0
+31
+!s108 1615942510.000000
+!s107 mainCircuit.vwf.vt|
+!s90 -work|work|mainCircuit.vwf.vt|
+!i113 1
+R10
+R11
+nmain@circuit_vlg_vec_tst

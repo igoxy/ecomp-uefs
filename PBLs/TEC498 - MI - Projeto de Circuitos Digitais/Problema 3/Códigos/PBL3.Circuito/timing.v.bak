@@ -1,0 +1,12 @@
+module timing(clk, idtyped, st1, st2, tim);
+	input clk, idtyped;
+	input [0:1] st1, st2;
+	output reg [29:0] counter;
+	
+	initial counter = 0;
+	
+	always(posedge clk) begin
+		if(idtyped) counter = counter + 1;
+		
+	end
+endmodule

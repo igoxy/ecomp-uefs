@@ -1,0 +1,7 @@
+module mainCircuit(clk, counter);
+	input clk;
+	output counter;
+	//wire w;
+	testT(.clk(clk), .counter[30](counter));
+	
+endmodule

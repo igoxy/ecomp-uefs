@@ -1,0 +1,73 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -9.167
+TNS   : -390.869
+
+Type  : Setup 'controlOutputDisplay:comb_12|clk_counter[13]'
+Slack : -8.889
+TNS   : -84.861
+
+Type  : Setup 'got_coin'
+Slack : -6.991
+TNS   : -26.398
+
+Type  : Setup 'get_id:comb_9|id_typed'
+Slack : -4.673
+TNS   : -20.130
+
+Type  : Setup 'add_id:comb_4|col[0]'
+Slack : -4.610
+TNS   : -31.536
+
+Type  : Hold 'add_id:comb_4|col[0]'
+Slack : -2.990
+TNS   : -6.112
+
+Type  : Hold 'clk'
+Slack : -1.800
+TNS   : -23.134
+
+Type  : Hold 'get_id:comb_9|id_typed'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Hold 'controlOutputDisplay:comb_12|clk_counter[13]'
+Slack : 1.927
+TNS   : 0.000
+
+Type  : Hold 'got_coin'
+Slack : 2.207
+TNS   : 0.000
+
+Type  : Recovery 'clk'
+Slack : -3.975
+TNS   : -19.875
+
+Type  : Removal 'clk'
+Slack : 4.421
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'got_coin'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'controlOutputDisplay:comb_12|clk_counter[13]'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'get_id:comb_9|id_typed'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'add_id:comb_4|col[0]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,15 @@
+module tt(x,y);
+input [0:4] x;
+output reg [0:4] y;
+reg refri[0:4];
+
+
+	initial begin
+		refri = 4'b1111;
+	end
+	
+	always @(*) begin
+		if(x == refri) y = x;
+		else y = 0;
+	end
+endmodule

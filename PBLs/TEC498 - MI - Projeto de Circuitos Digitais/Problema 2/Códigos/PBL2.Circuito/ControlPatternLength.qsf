@@ -1,0 +1,80 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2020  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+# Date created = 14:11:25  March 12, 2021
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		ControlPatternLength_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM240T100C5
+set_global_assignment -name TOP_LEVEL_ENTITY mainCircuit
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:11:25  MARCH 12, 2021"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
+set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_location_assignment PIN_42 -to button0
+set_location_assignment PIN_40 -to sen0
+set_location_assignment PIN_38 -to sen1
+set_location_assignment PIN_36 -to sen2
+set_location_assignment PIN_34 -to sen3
+set_location_assignment PIN_30 -to sen4
+set_location_assignment PIN_90 -to seg_A
+set_location_assignment PIN_70 -to seg_B
+set_location_assignment PIN_41 -to seg_C
+set_location_assignment PIN_98 -to seg_D
+set_location_assignment PIN_100 -to seg_E
+set_location_assignment PIN_92 -to seg_F
+set_location_assignment PIN_39 -to seg_G
+set_location_assignment PIN_43 -to alarme
+set_global_assignment -name VERILOG_FILE mainCircuit.v
+set_global_assignment -name VERILOG_FILE controlOutputAC.v
+set_global_assignment -name VERILOG_FILE controlOutputCO.v
+set_global_assignment -name VERILOG_FILE controlOutputRE.v
+set_global_assignment -name VERILOG_FILE controlOutputAL.v
+set_global_assignment -name VERILOG_FILE controlMatriz.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE mainCircuit.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ControlOutputAC.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ControlOutputCO.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ControlOutputRE.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ControlOutputDis.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ControlOutputAL.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE controlMatriz.vwf

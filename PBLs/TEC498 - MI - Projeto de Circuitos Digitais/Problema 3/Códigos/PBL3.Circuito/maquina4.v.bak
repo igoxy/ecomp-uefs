@@ -1,0 +1,58 @@
+module maquina4(clk, rst, tecla_zero, tecla_one, confirmar, cancelar, val, iniciar);
+
+	input clk, rst, tecla_one, tecla_one, confirmar, cancelar, iniciar;
+	output reg [2:0] val;
+	reg [1:0] state;
+	reg [2:0] interator;
+	
+	parameter ini = 2b'00, 
+				 compra = 2b'01; 
+		       valida = 2b'10;
+				 erro = 2b'11;
+				 
+	
+	
+	initial state = ini;
+	
+	
+	always @(posedge clk, negedge rst) begin
+		if(rst == 0) state = ini;
+		
+		else begin
+			case(state)
+			
+				ini: begin
+					if(iniciar == 1) state <= compra;
+					else state <= ini;
+				end
+				
+				compra: begin
+					
+					if(confirmar == 1) state <= valida;
+					else state <= compra;
+					if(tecla_one) val[interator] = 1;
+					if(tecla_zero) val[interator] = 0;
+					interator = interator + 1;
+					
+				end
+				
+				valida: begin
+					
+					if(val == 4) state <= ini;
+					else state <= erro;
+					
+					
+				end
+				
+				erro: begin
+					state <= ini;
+				
+					
+				end
+			
+			endcase
+		end
+		
+	end
+	
+endmodule

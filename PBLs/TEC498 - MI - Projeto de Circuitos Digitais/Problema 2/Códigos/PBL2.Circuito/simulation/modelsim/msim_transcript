@@ -1,0 +1,23 @@
+# Reading pref.tcl
+# do ControlPatternLength_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/PBL.Circuito {C:/Users/User/Desktop/PBL.Circuito/controlMatriz.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:42:00 on May 02,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/User/Desktop/PBL.Circuito" C:/Users/User/Desktop/PBL.Circuito/controlMatriz.v 
+# -- Compiling module controlMatriz
+# 
+# Top level modules:
+# 	controlMatriz
+# End time: 12:42:00 on May 02,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 

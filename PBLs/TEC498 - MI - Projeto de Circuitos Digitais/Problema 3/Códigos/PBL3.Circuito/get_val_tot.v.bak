@@ -1,0 +1,13 @@
+module get_val_tot(coin, val_tot);
+	input [2:0] coin;
+	
+	parameter 
+	penny1 = 01,
+	penny2 = 10 ,
+	penny3 = 11;
+	
+	output reg [2:0] val_tot;
+	
+	always(coin) val_tot = val_tot + coin;
+	
+endmodule

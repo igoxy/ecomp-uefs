@@ -1,0 +1,30 @@
+
+State Machine - |mainCircuit|get_val_tot:comb_10|state
+Name state.wait_pulse_down state.penny_invalid state.penny2 state.penny1_75 state.penny1_50 state.penny1_25 state.penny1 state.penny0_75 state.penny0_50 state.penny0_25 state.penny0 
+state.penny0 0 0 0 0 0 0 0 0 0 0 0 
+state.penny0_25 0 0 0 0 0 0 0 0 0 1 1 
+state.penny0_50 0 0 0 0 0 0 0 0 1 0 1 
+state.penny0_75 0 0 0 0 0 0 0 1 0 0 1 
+state.penny1 0 0 0 0 0 0 1 0 0 0 1 
+state.penny1_25 0 0 0 0 0 1 0 0 0 0 1 
+state.penny1_50 0 0 0 0 1 0 0 0 0 0 1 
+state.penny1_75 0 0 0 1 0 0 0 0 0 0 1 
+state.penny2 0 0 1 0 0 0 0 0 0 0 1 
+state.penny_invalid 0 1 0 0 0 0 0 0 0 0 1 
+state.wait_pulse_down 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |mainCircuit|get_id:comb_9|state
+Name state.wait_button_down state.add_col state.add_row state.wait_id 
+state.wait_id 0 0 0 0 
+state.add_row 0 0 1 1 
+state.add_col 0 1 0 1 
+state.wait_button_down 1 0 0 1 
+
+State Machine - |mainCircuit|maquina4:comb_6|state
+Name state.error2 state.error1 state.all_ok state.validate_coin state.validate_id state.zzz 
+state.zzz 0 0 0 0 0 0 
+state.validate_id 0 0 0 0 1 1 
+state.validate_coin 0 0 0 1 0 1 
+state.all_ok 0 0 1 0 0 1 
+state.error1 0 1 0 0 0 1 
+state.error2 1 0 0 0 0 1 

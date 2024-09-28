@@ -1,0 +1,118 @@
+module get_id(clk, key_one, key_two,  key_three, key_four);
+
+	input clk, key_one, key_two,  key_three, key_four;
+	output reg [5:0] id_product;
+	output reg id_typed;
+	
+	reg [0:2] state;
+	reg [2:0] row;
+	reg [2:0] col;
+	reg counter;
+	
+	
+	parameter wait_id = 2'b00,
+				 add_row = 2'b01,
+				 add_col = 2'b10,
+				 wait_button_up = 2'b11;
+	
+	initial begin
+	
+		state <= wait_id;
+		row <= 0;
+		col <= 0;
+		counter = 0;
+		
+	end
+				 
+	
+	always@(posedge clk) begin
+	
+		case(state)
+		
+			wait_id: begin
+			
+				if(key_one || key_two || key_three || key_four) begin
+				
+					if(counter == 0) begin
+						state <= add_row;
+						counter = counter + 1;
+					end
+					
+					else begin 
+						state <= add_col;
+						counter = 0;
+					end
+				end
+			end
+			
+			add_row: begin
+			
+				case({key_one ,key_two, key_three,key_four})
+						
+							1000: begin 
+								 row <= 1;
+						
+							end
+							
+							0100: begin 
+								 row <= 2;
+								
+							end
+							
+							0010: begin 
+								 row <= 3;
+								
+							end
+							
+							0001: begin 
+								row <= 4;
+								
+							end
+						
+				endcase
+				state <= wait_button_up:
+						
+			end
+			
+			wait_button_up: begin
+			
+				if(({key_one, key_two, key_three,key_four}) == 4'b0000) begin
+						state <= wait_id;
+					end 
+					
+					else state <= wait_button_up;
+			end
+			
+			add_col:begin
+			
+				case({key_one ,key_two, key_three,key_four})
+							
+								1000: begin 
+									 col <= 1;
+							
+								end
+								
+								0100: begin 
+									 col <= 2;
+									
+								end
+								
+								0010: begin 
+									 col <= 3;
+									
+								end
+								
+								0001: begin 
+									col <= 4;
+									
+								end
+							
+				endcase
+				id_typed = 1;
+				id_product = {row,col};
+							
+			end
+			
+		endcase
+	end
+endmodule

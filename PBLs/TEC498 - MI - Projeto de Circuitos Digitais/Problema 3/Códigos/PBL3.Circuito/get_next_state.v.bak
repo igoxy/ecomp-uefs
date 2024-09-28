@@ -1,0 +1,78 @@
+module get_next_state(coin, st3, next_state);
+	input [2:0] coin;
+	input [3:0] st3;
+	output reg [3:0] next_state;
+	
+	parameter 
+	penny0 = 4'b0000,
+	penny0_25 = 4'b0001 ,
+	penny0_50 = 4'b0010,
+	penny0_75 = 4'b0011,
+	penny1 = 4'b0100,
+	penny1_25 = 4'b0101,
+	penny1_50 = 4'b0110,
+	penny1_75 = 4'b0111,
+	penny2 = 4'b1000,
+	penny_invalid = 4'b1001,
+	wait_pulse_down = 4'b1111;
+	
+	parameter penny_of_25 = 1, penny_of_50 = 2, penny_of_1 = 4;
+
+	initial next_state = 0;
+	
+	always@(coin) begin
+	
+		case(coin) begin
+		
+			penny_of_25: begin
+			
+				case(st3) 
+					
+					penny0: next_state = penny0_25;
+					penny0_25: next_state = penny0_50;
+					penny0_50: next_state = penny0_75;
+					penny0_75: next_state = penny1;
+					penny1: next_state = penny1_25;
+					penny1_25:  next_state = penny1_50;
+					penny1_50:  next_state = penny1_75;
+					penny1_75: next_state = penny2;
+					default: next_state = penny_invalid;
+					
+				endcase
+			end
+			
+			penny_of_50: begin
+			
+				case(st3) 
+					
+					penny0: next_state = penny0_50;
+					penny0_25: next_state = penny0_75;
+					penny0_50: next_state = penny1;
+					penny0_75: next_state = penny1_25;
+					penny1: next_state = penny1_50;
+					penny1_25:  next_state = penny1_75;
+					penny1_50:  next_state = penny2;
+					default: next_state = penny_invalid;
+					
+				endcase
+			end
+			
+			penny_of_1: begin
+			
+				case(st3) 
+					
+					penny0: next_state = penny1;
+					penny0_25: next_state = penny1_25;
+					penny0_50: next_state = penny1_50;
+					penny0_75: next_state = penny1_75;
+					penny1: next_state = penny2;
+					default: next_state = penny_invalid;
+					
+				endcase
+			end
+			
+			
+			
+		endcase
+	end
+endmodule

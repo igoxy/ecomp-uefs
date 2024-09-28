@@ -1,0 +1,14 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/PBL.Circuito {C:/Users/User/Desktop/PBL.Circuito/mainCircuit.v}
+vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/PBL.Circuito {C:/Users/User/Desktop/PBL.Circuito/controlOutputAC.v}
+vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/PBL.Circuito {C:/Users/User/Desktop/PBL.Circuito/controlOutputCO.v}
+vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/PBL.Circuito {C:/Users/User/Desktop/PBL.Circuito/controlOutputRE.v}
+vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/PBL.Circuito {C:/Users/User/Desktop/PBL.Circuito/controlOutputAL.v}
+vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/PBL.Circuito {C:/Users/User/Desktop/PBL.Circuito/controlMatriz.v}
+

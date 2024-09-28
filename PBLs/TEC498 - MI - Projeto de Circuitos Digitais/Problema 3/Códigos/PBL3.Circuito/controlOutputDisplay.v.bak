@@ -1,0 +1,175 @@
+module controlOutputDisplay(state, coin, id_product, counter, d1,d2,d3, d4);
+
+	input [0:3] state, id_product, coin;
+	input [2:0] interator;
+	output [7:0] d1,d2,d3,d4;
+	reg [15:0] clk_counter;
+	reg [1:0] interator_d;
+	reg output [0:3] enable_d;
+	
+	initial begin
+		enable_d = 4'b0000;
+		clk_counter = 0;
+	end
+	
+	always @(state) begin
+		case (state) begin
+		
+			4'b1111: begin // Estado zzz
+				d1 = 8'b00000000;
+				d2 = 8'b00000000;
+				d3 = 8'b00000000;
+				d4 = 8'b00000000;
+			end
+			
+			4'b0100: begin // Estado para receber o id
+				if(counter == 4) begin //Caso o id já tenha sido digitado
+				
+					case (id_product) begin
+					
+						4'b0000: begin 
+						
+							d1 = 8'b00111111;
+							d2 = 8'b00111111;
+							d3 = 8'b00111111;
+							d4 = 8'b00111111;
+						end
+						
+						4'b0001: begin 
+						
+							d1 = 8'b00000110;
+							d2 = 8'b00111111;
+							d3 = 8'b00111111;
+							d4 = 8'b00111111;
+						end
+						
+						4'b0011: begin 
+						
+							d1 = 8'b00000110;
+							d2 = 8'b00000110;
+							d3 = 8'b00111111;
+							d4 = 8'b00111111;
+						end
+						
+						4'b0100: begin 
+						
+							d1 = 8'b00111111;
+							d2 = 8'b00111111;
+							d3 = 8'b00000110;
+							d4 = 8'b00111111;
+						end
+						
+						4'b0101: begin 
+						
+							d1 = 8'b00000110;
+							d2 = 8'b00111111;
+							d3 = 8'b00000110;
+							d4 = 8'b00111111;
+						end
+						
+						4'b0110: begin 
+						
+							d1 = 8'b00111111;
+							d2 = 8'b00000110;
+							d3 = 8'b00000110;
+							d4 = 8'b00111111;
+						end
+						
+						4'b0111: begin 
+						
+							d1 = 8'b00000110;
+							d2 = 8'b00000110;
+							d3 = 8'b00000110;
+							d4 = 8'b00111111;
+						end
+						
+						4'b1000: begin 
+						
+							d1 = 8'b00111111;
+							d2 = 8'b00111111;
+							d3 = 8'b00111111;
+							d4 = 8'b00000110;
+						end
+						
+						4'b1001: begin 
+						
+							d1 = 8'b00000110;
+							d2 = 8'b00111111;
+							d3 = 8'b00111111;
+							d4 = 8'b00000110;
+						end
+						
+						4'b1010: begin 
+						
+							d1 = 8'b00111111;
+							d2 = 8'b00000110;
+							d3 = 8'b00111111;
+							d4 = 8'b00000110;
+						end
+						
+						4'b1011: begin 
+						
+							d1 = 8'b00000110;
+							d2 = 8'b00000110;
+							d3 = 8'b00111111;
+							d4 = 8'b00000110;
+						end
+						
+						4'b1100: begin 
+						
+							d1 = 8'b00111111;
+							d2 = 8'b00111111;
+							d3 = 8'b00000110;
+							d4 = 8'b00000110;
+						end
+						
+						4'b1101: begin 
+						
+							d1 = 8'b00000110;
+							d2 = 8'b00111111;
+							d3 = 8'b00000110;
+							d4 = 8'b00000110;
+						end
+						
+						4'b1110: begin 
+						
+							d1 = 8'b00111111;
+							d2 = 8'b00000110;
+							d3 = 8'b00000110;
+							d4 = 8'b00000110;
+						end
+						
+						4'b1111: begin 
+						
+							d1 = 8'b00000110;
+							d2 = 8'b00000110;
+							d3 = 8'b00000110;
+							d4 = 8'b00000110;
+						end
+						
+					endcase
+					
+				end
+			end
+		endcase
+			
+	end
+	
+	always @(clk)begin
+	
+		enable_d[interator_d] = 1;
+		clk_counter = clk_counter + 1;
+		
+		if(clk_counter[15]) begin
+			enable_d[interator_d] = 0;
+			interator = interator + 1;
+			
+			if(interator == 4) interator = 0;
+			clk_counter = 0;
+		
+		end
+		
+		
+	end
+	
+endmodule

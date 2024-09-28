@@ -1,0 +1,93 @@
+|mainCircuit
+sen0 => sen0.IN2
+sen1 => sen1.IN2
+sen2 => sen2.IN2
+sen3 => sen3.IN2
+sen4 => sen4.IN2
+button0 => button0.IN2
+alarme << controlOutputAL:comb_3.AL
+seg_A << controlOutputDis:dcfd_inst.SEG_A
+seg_B << controlOutputDis:dcfd_inst.SEG_B
+seg_C << controlOutputDis:dcfd_inst.SEG_C
+seg_D << controlOutputDis:dcfd_inst.SEG_D
+seg_E << controlOutputDis:dcfd_inst.SEG_E
+seg_F << controlOutputDis:dcfd_inst.SEG_F
+seg_G << controlOutputDis:dcfd_inst.SEG_G
+
+
+|mainCircuit|controlOutputAC:act_inst
+snA0 => And5.IN0
+snA1 => And5.IN1
+snA2 => And5.IN2
+snA3 => And5.IN3
+snA4 => And5.IN4
+OUT_AC <= And5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainCircuit|controlOutputCO:cptd_inst
+sn0 => And1.IN0
+sn0 => And2.IN0
+sn0 => And3.IN0
+sn0 => And4.IN0
+sn0 => And0.IN0
+sn1 => And0.IN1
+sn1 => And2.IN1
+sn1 => And3.IN1
+sn1 => And4.IN1
+sn1 => And1.IN1
+sn2 => And0.IN2
+sn2 => And1.IN2
+sn2 => And3.IN2
+sn2 => And4.IN2
+sn2 => And2.IN2
+sn3 => And0.IN3
+sn3 => And1.IN3
+sn3 => And2.IN3
+sn3 => And4.IN3
+sn3 => And3.IN3
+sn4 => And0.IN4
+sn4 => And1.IN4
+sn4 => And2.IN4
+sn4 => And3.IN4
+sn4 => And4.IN4
+OUT_CO <= Or0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainCircuit|controlOutputRE:rgtd_inst
+AC => And6.IN0
+CO => And6.IN1
+OUT_RE <= And6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainCircuit|controlOutputDis:dcfd_inst
+BUTTON => And10.IN1
+BUTTON => And11.IN1
+BUTTON => And12.IN1
+BUTTON => And13.IN1
+BUTTON => And14.IN1
+BUTTON => And15.IN1
+BUTTON => And16.IN1
+ENTRADA_AC => And7.IN0
+ENTRADA_AC => And8.IN0
+ENTRADA_AC => And9.IN0
+ENTRADA_CO => And8.IN1
+ENTRADA_CO => And7.IN1
+ENTRADA_CO => And9.IN1
+ENTRADA_RE => And9.IN2
+ENTRADA_RE => And7.IN2
+ENTRADA_RE => And8.IN2
+SEG_A <= And10.DB_MAX_OUTPUT_PORT_TYPE
+SEG_B <= And11.DB_MAX_OUTPUT_PORT_TYPE
+SEG_C <= And12.DB_MAX_OUTPUT_PORT_TYPE
+SEG_D <= And13.DB_MAX_OUTPUT_PORT_TYPE
+SEG_E <= And14.DB_MAX_OUTPUT_PORT_TYPE
+SEG_F <= And15.DB_MAX_OUTPUT_PORT_TYPE
+SEG_G <= And16.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainCircuit|controlOutputAL:comb_3
+button => comb.IN0
+AC => comb.IN1
+AL <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+

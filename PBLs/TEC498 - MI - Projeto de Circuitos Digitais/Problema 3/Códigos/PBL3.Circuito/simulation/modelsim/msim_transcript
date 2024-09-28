@@ -1,0 +1,52 @@
+# Reading pref.tcl
+# do testando_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Nova\ pasta/teste {C:/Users/User/Desktop/Nova pasta/teste/get_next_state.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:01:08 on Jun 18,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/User/Desktop/Nova pasta/teste" C:/Users/User/Desktop/Nova pasta/teste/get_next_state.v 
+# -- Compiling module get_next_state
+# 
+# Top level modules:
+# 	get_next_state
+# End time: 11:01:08 on Jun 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.get_next_state
+# vsim work.get_next_state 
+# Start time: 11:01:18 on Jun 18,2021
+# Loading work.get_next_state
+add wave -position insertpoint  \
+sim:/get_next_state/penny0 \
+sim:/get_next_state/penny0_25 \
+sim:/get_next_state/penny0_50 \
+sim:/get_next_state/penny0_75 \
+sim:/get_next_state/penny1 \
+sim:/get_next_state/penny1_25 \
+sim:/get_next_state/penny1_50 \
+sim:/get_next_state/penny1_75 \
+sim:/get_next_state/penny2 \
+sim:/get_next_state/penny_invalid \
+sim:/get_next_state/wait_pulse_down \
+sim:/get_next_state/penny_of_25 \
+sim:/get_next_state/penny_of_50 \
+sim:/get_next_state/penny_of_1 \
+sim:/get_next_state/coin \
+sim:/get_next_state/st3 \
+sim:/get_next_state/next_state
+force -freeze sim:/get_next_state/coin 0 0
+force -freeze sim:/get_next_state/st3 0 0
+run
+force -freeze sim:/get_next_state/coin 010 0
+run
+# End time: 11:02:14 on Jun 18,2021, Elapsed time: 0:00:56
+# Errors: 0, Warnings: 0

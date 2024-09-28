@@ -1,0 +1,11 @@
+module button_sensor(key_one ,key_two, key_three,key_four, apt);
+	input key_one ,key_two, key_three,key_four;
+	output reg apt;
+	
+	initial apt = 0;
+	
+	always@(*) begin
+		if(key_one || key_two || key_three || key_four) apt = 1;
+		else apt = 0;
+	end
+endmodule

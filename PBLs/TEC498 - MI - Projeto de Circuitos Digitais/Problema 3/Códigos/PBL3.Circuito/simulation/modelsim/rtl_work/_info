@@ -1,0 +1,35 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/User/Desktop/Nova pasta/teste/simulation/modelsim
+vget_next_state
+!s110 1624024868
+!i10b 1
+!s100 i3gfNc2g[R1GP[2D9BH5_1
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+IT?SFad_N4gP2?6OoOCBQ>0
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1624024574
+8C:/Users/User/Desktop/Nova pasta/teste/get_next_state.v
+FC:/Users/User/Desktop/Nova pasta/teste/get_next_state.v
+!i122 0
+L0 1 78
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1624024868.000000
+!s107 C:/Users/User/Desktop/Nova pasta/teste/get_next_state.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Nova pasta/teste|C:/Users/User/Desktop/Nova pasta/teste/get_next_state.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Users/User/Desktop/Nova pasta/teste}
+tCvgOpt 0

@@ -1,0 +1,644 @@
+Timing Analyzer report for ControlPatternLength
+Fri May 07 13:33:39 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'controlMatriz:comb_3|clk_Counter[15]'
+ 13. Hold: 'clk'
+ 14. Hold: 'controlMatriz:comb_3|clk_Counter[15]'
+ 15. Setup Transfers
+ 16. Hold Transfers
+ 17. Report TCCS
+ 18. Report RSKM
+ 19. Unconstrained Paths Summary
+ 20. Clock Status Summary
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; ControlPatternLength                                ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM240T100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                     ;
++--------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------+
+; Clock Name                           ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                  ;
++--------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------+
+; clk                                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                  ;
+; controlMatriz:comb_3|clk_Counter[15] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { controlMatriz:comb_3|clk_Counter[15] } ;
++--------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Fmax Summary                                                               ;
++------------+-----------------+--------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                           ; Note ;
++------------+-----------------+--------------------------------------+------+
+; 179.6 MHz  ; 179.6 MHz       ; clk                                  ;      ;
+; 186.46 MHz ; 186.46 MHz      ; controlMatriz:comb_3|clk_Counter[15] ;      ;
++------------+-----------------+--------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------------------------------+
+; Setup Summary                                                 ;
++--------------------------------------+--------+---------------+
+; Clock                                ; Slack  ; End Point TNS ;
++--------------------------------------+--------+---------------+
+; clk                                  ; -4.568 ; -97.888       ;
+; controlMatriz:comb_3|clk_Counter[15] ; -4.363 ; -36.558       ;
++--------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------+
+; Hold Summary                                                  ;
++--------------------------------------+--------+---------------+
+; Clock                                ; Slack  ; End Point TNS ;
++--------------------------------------+--------+---------------+
+; clk                                  ; -1.607 ; -3.046        ;
+; controlMatriz:comb_3|clk_Counter[15] ; 0.581  ; 0.000         ;
++--------------------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++---------------------------------------------------------------+
+; Minimum Pulse Width Summary                                   ;
++--------------------------------------+--------+---------------+
+; Clock                                ; Slack  ; End Point TNS ;
++--------------------------------------+--------+---------------+
+; clk                                  ; -2.289 ; -2.289        ;
+; controlMatriz:comb_3|clk_Counter[15] ; 0.234  ; 0.000         ;
++--------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                               ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; -4.568 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.235      ;
+; -4.568 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.235      ;
+; -4.568 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.235      ;
+; -4.568 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.235      ;
+; -4.568 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.235      ;
+; -4.555 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.222      ;
+; -4.555 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.222      ;
+; -4.555 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.222      ;
+; -4.446 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.113      ;
+; -4.446 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.113      ;
+; -4.446 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.113      ;
+; -4.446 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.113      ;
+; -4.446 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.113      ;
+; -4.433 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.100      ;
+; -4.433 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.100      ;
+; -4.433 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.100      ;
+; -4.401 ; controlMatriz:comb_3|clk_Counter[1]  ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.068      ;
+; -4.401 ; controlMatriz:comb_3|clk_Counter[1]  ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.068      ;
+; -4.401 ; controlMatriz:comb_3|clk_Counter[1]  ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.068      ;
+; -4.401 ; controlMatriz:comb_3|clk_Counter[1]  ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.068      ;
+; -4.401 ; controlMatriz:comb_3|clk_Counter[1]  ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.068      ;
+; -4.388 ; controlMatriz:comb_3|clk_Counter[1]  ; controlMatriz:comb_3|clk_Counter[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.055      ;
+; -4.388 ; controlMatriz:comb_3|clk_Counter[1]  ; controlMatriz:comb_3|clk_Counter[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.055      ;
+; -4.388 ; controlMatriz:comb_3|clk_Counter[1]  ; controlMatriz:comb_3|clk_Counter[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.055      ;
+; -4.249 ; controlMatriz:comb_3|clk_Counter[2]  ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.916      ;
+; -4.249 ; controlMatriz:comb_3|clk_Counter[2]  ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.916      ;
+; -4.249 ; controlMatriz:comb_3|clk_Counter[2]  ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.916      ;
+; -4.249 ; controlMatriz:comb_3|clk_Counter[2]  ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.916      ;
+; -4.249 ; controlMatriz:comb_3|clk_Counter[2]  ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.916      ;
+; -4.236 ; controlMatriz:comb_3|clk_Counter[2]  ; controlMatriz:comb_3|clk_Counter[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.903      ;
+; -4.236 ; controlMatriz:comb_3|clk_Counter[2]  ; controlMatriz:comb_3|clk_Counter[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.903      ;
+; -4.236 ; controlMatriz:comb_3|clk_Counter[2]  ; controlMatriz:comb_3|clk_Counter[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.903      ;
+; -4.210 ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.877      ;
+; -4.210 ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.877      ;
+; -4.210 ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.877      ;
+; -4.210 ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.877      ;
+; -4.210 ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.877      ;
+; -4.197 ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.864      ;
+; -4.197 ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.864      ;
+; -4.197 ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.864      ;
+; -4.190 ; controlMatriz:comb_3|clk_Counter[6]  ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.857      ;
+; -4.190 ; controlMatriz:comb_3|clk_Counter[6]  ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.857      ;
+; -4.190 ; controlMatriz:comb_3|clk_Counter[6]  ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.857      ;
+; -4.190 ; controlMatriz:comb_3|clk_Counter[6]  ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.857      ;
+; -4.190 ; controlMatriz:comb_3|clk_Counter[6]  ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.857      ;
+; -4.177 ; controlMatriz:comb_3|clk_Counter[6]  ; controlMatriz:comb_3|clk_Counter[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.844      ;
+; -4.177 ; controlMatriz:comb_3|clk_Counter[6]  ; controlMatriz:comb_3|clk_Counter[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.844      ;
+; -4.177 ; controlMatriz:comb_3|clk_Counter[6]  ; controlMatriz:comb_3|clk_Counter[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.844      ;
+; -4.091 ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.758      ;
+; -4.091 ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.758      ;
+; -4.091 ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.758      ;
+; -4.091 ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.758      ;
+; -4.091 ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.758      ;
+; -4.078 ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.745      ;
+; -4.078 ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.745      ;
+; -4.078 ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.745      ;
+; -3.973 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.961 ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.628      ;
+; -3.961 ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.628      ;
+; -3.961 ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.628      ;
+; -3.961 ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.628      ;
+; -3.961 ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.628      ;
+; -3.960 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.948 ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.948 ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.948 ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.615      ;
+; -3.939 ; controlMatriz:comb_3|clk_Counter[7]  ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.606      ;
+; -3.939 ; controlMatriz:comb_3|clk_Counter[7]  ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.606      ;
+; -3.939 ; controlMatriz:comb_3|clk_Counter[7]  ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.606      ;
+; -3.939 ; controlMatriz:comb_3|clk_Counter[7]  ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.606      ;
+; -3.939 ; controlMatriz:comb_3|clk_Counter[7]  ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.606      ;
+; -3.926 ; controlMatriz:comb_3|clk_Counter[7]  ; controlMatriz:comb_3|clk_Counter[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.593      ;
+; -3.926 ; controlMatriz:comb_3|clk_Counter[7]  ; controlMatriz:comb_3|clk_Counter[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.593      ;
+; -3.926 ; controlMatriz:comb_3|clk_Counter[7]  ; controlMatriz:comb_3|clk_Counter[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.593      ;
+; -3.851 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; controlMatriz:comb_3|clk_Counter[14] ; controlMatriz:comb_3|clk_Counter[22] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; controlMatriz:comb_3|clk_Counter[14] ; controlMatriz:comb_3|clk_Counter[21] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; controlMatriz:comb_3|clk_Counter[14] ; controlMatriz:comb_3|clk_Counter[20] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; controlMatriz:comb_3|clk_Counter[14] ; controlMatriz:comb_3|clk_Counter[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; controlMatriz:comb_3|clk_Counter[14] ; controlMatriz:comb_3|clk_Counter[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'controlMatriz:comb_3|clk_Counter[15]'                                                                                                                                                              ;
++--------+--------------------------------------+-------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                             ; Launch Clock                         ; Latch Clock                          ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+-------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; -4.363 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|COLUNA[2]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 5.030      ;
+; -4.313 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|COLUNA[2]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 4.980      ;
+; -4.200 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|COLUNA[2]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 4.867      ;
+; -3.768 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[0]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 4.435      ;
+; -3.607 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[0]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 4.274      ;
+; -3.555 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|COLUNA[3]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 4.222      ;
+; -3.454 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|COLUNA[3]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 4.121      ;
+; -3.420 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[0]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 4.087      ;
+; -3.291 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|COLUNA[3]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 3.958      ;
+; -2.829 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[6]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 3.496      ;
+; -2.826 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[2]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 3.493      ;
+; -2.677 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[4]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 3.344      ;
+; -2.639 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[1]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 3.306      ;
+; -2.637 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[5]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 3.304      ;
+; -2.628 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[3]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 3.295      ;
+; -2.514 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[4]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 3.181      ;
+; -2.295 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[1]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.962      ;
+; -2.293 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[5]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.960      ;
+; -2.276 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[3]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.943      ;
+; -2.164 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|lin_counter[1] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.831      ;
+; -2.164 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|COLUNA[1]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.831      ;
+; -2.161 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|lin_counter[0] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.828      ;
+; -2.147 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|lin_counter[2] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.814      ;
+; -2.132 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[4]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.799      ;
+; -2.085 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[6]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.752      ;
+; -2.067 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[2]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.734      ;
+; -2.039 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|lin_counter[2] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.706      ;
+; -2.033 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|lin_counter[1] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.700      ;
+; -2.032 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|COLUNA[1]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.699      ;
+; -2.029 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|lin_counter[0] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.696      ;
+; -1.824 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[2]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.491      ;
+; -1.824 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[3]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.491      ;
+; -1.811 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[5]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.478      ;
+; -1.805 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[6]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.472      ;
+; -1.801 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[1]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.468      ;
+; -1.795 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|COLUNA[1]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.462      ;
+; -1.733 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|lin_counter[2] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.400      ;
+; -1.725 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|lin_counter[0] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.392      ;
+; -1.718 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|lin_counter[1] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 0.000      ; 2.385      ;
+; -1.065 ; controlMatriz:comb_3|clk_Counter[25] ; controlMatriz:comb_3|COLUNA[2]      ; clk                                  ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 1.534      ; 3.266      ;
+; -0.606 ; controlMatriz:comb_3|clk_Counter[25] ; controlMatriz:comb_3|COLUNA[3]      ; clk                                  ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 1.534      ; 2.807      ;
+; -0.135 ; controlMatriz:comb_3|clk_Counter[25] ; controlMatriz:comb_3|COLUNA[1]      ; clk                                  ; controlMatriz:comb_3|clk_Counter[15] ; 1.000        ; 1.534      ; 2.336      ;
++--------+--------------------------------------+-------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                        ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock                         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+-------------+--------------+------------+------------+
+; -1.607 ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 2.338      ;
+; -1.107 ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 2.338      ;
+; -0.775 ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[16] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 3.170      ;
+; -0.664 ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[17] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 3.281      ;
+; -0.275 ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[16] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 3.170      ;
+; -0.164 ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[17] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 3.281      ;
+; 0.186  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[25] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 4.131      ;
+; 0.186  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[24] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 4.131      ;
+; 0.186  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[23] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 4.131      ;
+; 0.199  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[22] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 4.144      ;
+; 0.199  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[21] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 4.144      ;
+; 0.199  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[20] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 4.144      ;
+; 0.199  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[19] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 4.144      ;
+; 0.199  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[18] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; 0.000        ; 3.348      ; 4.144      ;
+; 0.686  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[25] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 4.131      ;
+; 0.686  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[24] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 4.131      ;
+; 0.686  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[23] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 4.131      ;
+; 0.699  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[22] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 4.144      ;
+; 0.699  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[21] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 4.144      ;
+; 0.699  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[20] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 4.144      ;
+; 0.699  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[19] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 4.144      ;
+; 0.699  ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[18] ; controlMatriz:comb_3|clk_Counter[15] ; clk         ; -0.500       ; 3.348      ; 4.144      ;
+; 1.668  ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[0]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 1.889      ;
+; 2.108  ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[5]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.329      ;
+; 2.116  ; controlMatriz:comb_3|clk_Counter[18] ; controlMatriz:comb_3|clk_Counter[18] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116  ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[8]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117  ; controlMatriz:comb_3|clk_Counter[25] ; controlMatriz:comb_3|clk_Counter[25] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; controlMatriz:comb_3|clk_Counter[20] ; controlMatriz:comb_3|clk_Counter[20] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; controlMatriz:comb_3|clk_Counter[19] ; controlMatriz:comb_3|clk_Counter[19] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.126  ; controlMatriz:comb_3|clk_Counter[10] ; controlMatriz:comb_3|clk_Counter[10] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; controlMatriz:comb_3|clk_Counter[9]  ; controlMatriz:comb_3|clk_Counter[9]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; controlMatriz:comb_3|clk_Counter[17] ; controlMatriz:comb_3|clk_Counter[17] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; controlMatriz:comb_3|clk_Counter[7]  ; controlMatriz:comb_3|clk_Counter[7]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.139  ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[1]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.360      ;
+; 2.212  ; controlMatriz:comb_3|clk_Counter[21] ; controlMatriz:comb_3|clk_Counter[21] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221  ; controlMatriz:comb_3|clk_Counter[11] ; controlMatriz:comb_3|clk_Counter[11] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; controlMatriz:comb_3|clk_Counter[16] ; controlMatriz:comb_3|clk_Counter[16] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; controlMatriz:comb_3|clk_Counter[6]  ; controlMatriz:comb_3|clk_Counter[6]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; controlMatriz:comb_3|clk_Counter[1]  ; controlMatriz:comb_3|clk_Counter[1]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.230  ; controlMatriz:comb_3|clk_Counter[23] ; controlMatriz:comb_3|clk_Counter[23] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[13] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[3]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231  ; controlMatriz:comb_3|clk_Counter[24] ; controlMatriz:comb_3|clk_Counter[24] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; controlMatriz:comb_3|clk_Counter[14] ; controlMatriz:comb_3|clk_Counter[14] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; controlMatriz:comb_3|clk_Counter[22] ; controlMatriz:comb_3|clk_Counter[22] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; controlMatriz:comb_3|clk_Counter[12] ; controlMatriz:comb_3|clk_Counter[12] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[4]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; controlMatriz:comb_3|clk_Counter[2]  ; controlMatriz:comb_3|clk_Counter[2]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.940  ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[6]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.161      ;
+; 2.948  ; controlMatriz:comb_3|clk_Counter[18] ; controlMatriz:comb_3|clk_Counter[19] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.169      ;
+; 2.948  ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[9]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.169      ;
+; 2.949  ; controlMatriz:comb_3|clk_Counter[20] ; controlMatriz:comb_3|clk_Counter[21] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949  ; controlMatriz:comb_3|clk_Counter[19] ; controlMatriz:comb_3|clk_Counter[20] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.170      ;
+; 2.958  ; controlMatriz:comb_3|clk_Counter[10] ; controlMatriz:comb_3|clk_Counter[11] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958  ; controlMatriz:comb_3|clk_Counter[9]  ; controlMatriz:comb_3|clk_Counter[10] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.179      ;
+; 2.971  ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[2]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.192      ;
+; 3.051  ; controlMatriz:comb_3|clk_Counter[5]  ; controlMatriz:comb_3|clk_Counter[7]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.272      ;
+; 3.059  ; controlMatriz:comb_3|clk_Counter[18] ; controlMatriz:comb_3|clk_Counter[20] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.280      ;
+; 3.059  ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[10] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.280      ;
+; 3.060  ; controlMatriz:comb_3|clk_Counter[20] ; controlMatriz:comb_3|clk_Counter[22] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060  ; controlMatriz:comb_3|clk_Counter[19] ; controlMatriz:comb_3|clk_Counter[21] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.281      ;
+; 3.069  ; controlMatriz:comb_3|clk_Counter[10] ; controlMatriz:comb_3|clk_Counter[12] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069  ; controlMatriz:comb_3|clk_Counter[9]  ; controlMatriz:comb_3|clk_Counter[11] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.290      ;
+; 3.152  ; controlMatriz:comb_3|clk_Counter[21] ; controlMatriz:comb_3|clk_Counter[22] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.373      ;
+; 3.161  ; controlMatriz:comb_3|clk_Counter[16] ; controlMatriz:comb_3|clk_Counter[17] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161  ; controlMatriz:comb_3|clk_Counter[1]  ; controlMatriz:comb_3|clk_Counter[2]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161  ; controlMatriz:comb_3|clk_Counter[6]  ; controlMatriz:comb_3|clk_Counter[7]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161  ; controlMatriz:comb_3|clk_Counter[11] ; controlMatriz:comb_3|clk_Counter[12] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.382      ;
+; 3.170  ; controlMatriz:comb_3|clk_Counter[23] ; controlMatriz:comb_3|clk_Counter[24] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[14] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[4]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; controlMatriz:comb_3|clk_Counter[18] ; controlMatriz:comb_3|clk_Counter[21] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[11] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171  ; controlMatriz:comb_3|clk_Counter[24] ; controlMatriz:comb_3|clk_Counter[25] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171  ; controlMatriz:comb_3|clk_Counter[14] ; controlMatriz:comb_3|clk_Counter[15] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171  ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[5]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171  ; controlMatriz:comb_3|clk_Counter[19] ; controlMatriz:comb_3|clk_Counter[22] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.180  ; controlMatriz:comb_3|clk_Counter[9]  ; controlMatriz:comb_3|clk_Counter[12] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.401      ;
+; 3.281  ; controlMatriz:comb_3|clk_Counter[23] ; controlMatriz:comb_3|clk_Counter[25] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281  ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[15] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281  ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[5]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281  ; controlMatriz:comb_3|clk_Counter[18] ; controlMatriz:comb_3|clk_Counter[22] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281  ; controlMatriz:comb_3|clk_Counter[8]  ; controlMatriz:comb_3|clk_Counter[12] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.282  ; controlMatriz:comb_3|clk_Counter[14] ; controlMatriz:comb_3|clk_Counter[16] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.503      ;
+; 3.282  ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[6]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.503      ;
+; 3.392  ; controlMatriz:comb_3|clk_Counter[13] ; controlMatriz:comb_3|clk_Counter[16] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.613      ;
+; 3.392  ; controlMatriz:comb_3|clk_Counter[3]  ; controlMatriz:comb_3|clk_Counter[6]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.613      ;
+; 3.393  ; controlMatriz:comb_3|clk_Counter[4]  ; controlMatriz:comb_3|clk_Counter[7]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.614      ;
+; 3.393  ; controlMatriz:comb_3|clk_Counter[14] ; controlMatriz:comb_3|clk_Counter[17] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.614      ;
+; 3.440  ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[7]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.661      ;
+; 3.440  ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[6]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.661      ;
+; 3.440  ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[5]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.661      ;
+; 3.440  ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[4]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.661      ;
+; 3.440  ; controlMatriz:comb_3|clk_Counter[0]  ; controlMatriz:comb_3|clk_Counter[3]  ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.661      ;
+; 3.492  ; controlMatriz:comb_3|clk_Counter[22] ; controlMatriz:comb_3|clk_Counter[25] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; controlMatriz:comb_3|clk_Counter[12] ; controlMatriz:comb_3|clk_Counter[15] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; controlMatriz:comb_3|clk_Counter[22] ; controlMatriz:comb_3|clk_Counter[24] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; controlMatriz:comb_3|clk_Counter[12] ; controlMatriz:comb_3|clk_Counter[14] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; controlMatriz:comb_3|clk_Counter[22] ; controlMatriz:comb_3|clk_Counter[23] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; controlMatriz:comb_3|clk_Counter[12] ; controlMatriz:comb_3|clk_Counter[13] ; clk                                  ; clk         ; 0.000        ; 0.000      ; 3.713      ;
++--------+--------------------------------------+--------------------------------------+--------------------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'controlMatriz:comb_3|clk_Counter[15]'                                                                                                                                                              ;
++-------+--------------------------------------+-------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                             ; Launch Clock                         ; Latch Clock                          ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+-------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+; 0.581 ; controlMatriz:comb_3|clk_Counter[25] ; controlMatriz:comb_3|COLUNA[1]      ; clk                                  ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 1.534      ; 2.336      ;
+; 1.052 ; controlMatriz:comb_3|clk_Counter[25] ; controlMatriz:comb_3|COLUNA[3]      ; clk                                  ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 1.534      ; 2.807      ;
+; 1.511 ; controlMatriz:comb_3|clk_Counter[25] ; controlMatriz:comb_3|COLUNA[2]      ; clk                                  ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 1.534      ; 3.266      ;
+; 2.164 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|lin_counter[1] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.385      ;
+; 2.171 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|lin_counter[0] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.392      ;
+; 2.179 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|lin_counter[2] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.400      ;
+; 2.241 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|COLUNA[1]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.462      ;
+; 2.247 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[1]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.468      ;
+; 2.251 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[6]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.472      ;
+; 2.257 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[5]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.478      ;
+; 2.270 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[2]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.491      ;
+; 2.270 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[3]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.491      ;
+; 2.475 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|lin_counter[0] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.696      ;
+; 2.478 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|COLUNA[1]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.699      ;
+; 2.479 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|lin_counter[1] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.700      ;
+; 2.485 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|lin_counter[2] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.706      ;
+; 2.513 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[2]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.734      ;
+; 2.531 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[6]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.752      ;
+; 2.578 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[4]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.799      ;
+; 2.593 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|lin_counter[2] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.814      ;
+; 2.607 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|lin_counter[0] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.828      ;
+; 2.610 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|lin_counter[1] ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.831      ;
+; 2.610 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|COLUNA[1]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.831      ;
+; 2.722 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[3]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.943      ;
+; 2.739 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[5]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.960      ;
+; 2.741 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[1]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 2.962      ;
+; 2.934 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|COLUNA[3]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.155      ;
+; 2.960 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[4]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.181      ;
+; 3.074 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[3]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.295      ;
+; 3.083 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[5]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.304      ;
+; 3.085 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[1]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.306      ;
+; 3.123 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[4]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.344      ;
+; 3.272 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[2]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.493      ;
+; 3.275 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[6]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.496      ;
+; 3.355 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|COLUNA[3]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.576      ;
+; 3.597 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|COLUNA[3]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.818      ;
+; 3.686 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|COLUNA[2]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 3.907      ;
+; 3.866 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|LINHA[0]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 4.087      ;
+; 4.037 ; controlMatriz:comb_3|lin_counter[1]  ; controlMatriz:comb_3|COLUNA[2]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 4.258      ;
+; 4.053 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|LINHA[0]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 4.274      ;
+; 4.214 ; controlMatriz:comb_3|lin_counter[2]  ; controlMatriz:comb_3|LINHA[0]       ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 4.435      ;
+; 4.264 ; controlMatriz:comb_3|lin_counter[0]  ; controlMatriz:comb_3|COLUNA[2]      ; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 0.000        ; 0.000      ; 4.485      ;
++-------+--------------------------------------+-------------------------------------+--------------------------------------+--------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                         ;
++--------------------------------------+--------------------------------------+----------+----------+----------+----------+
+; From Clock                           ; To Clock                             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------------------------+--------------------------------------+----------+----------+----------+----------+
+; clk                                  ; clk                                  ; 589      ; 0        ; 0        ; 0        ;
+; controlMatriz:comb_3|clk_Counter[15] ; clk                                  ; 21       ; 21       ; 0        ; 0        ;
+; clk                                  ; controlMatriz:comb_3|clk_Counter[15] ; 3        ; 0        ; 0        ; 0        ;
+; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 49       ; 0        ; 0        ; 0        ;
++--------------------------------------+--------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                          ;
++--------------------------------------+--------------------------------------+----------+----------+----------+----------+
+; From Clock                           ; To Clock                             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------------------------+--------------------------------------+----------+----------+----------+----------+
+; clk                                  ; clk                                  ; 589      ; 0        ; 0        ; 0        ;
+; controlMatriz:comb_3|clk_Counter[15] ; clk                                  ; 21       ; 21       ; 0        ; 0        ;
+; clk                                  ; controlMatriz:comb_3|clk_Counter[15] ; 3        ; 0        ; 0        ; 0        ;
+; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; 49       ; 0        ; 0        ; 0        ;
++--------------------------------------+--------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 29    ; 29   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 16    ; 16   ;
++---------------------------------+-------+------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                             ;
++--------------------------------------+--------------------------------------+------+-------------+
+; Target                               ; Clock                                ; Type ; Status      ;
++--------------------------------------+--------------------------------------+------+-------------+
+; clk                                  ; clk                                  ; Base ; Constrained ;
+; controlMatriz:comb_3|clk_Counter[15] ; controlMatriz:comb_3|clk_Counter[15] ; Base ; Constrained ;
++--------------------------------------+--------------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; button0    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sen0       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sen1       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sen2       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sen3       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sen4       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; COLUNA[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COLUNA[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COLUNA[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; alarme      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; button0    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sen0       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sen1       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sen2       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sen3       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sen4       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; COLUNA[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COLUNA[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; COLUNA[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LINHA[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; alarme      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri May 07 13:33:37 2021
+Info: Command: quartus_sta ControlPatternLength -c ControlPatternLength
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ControlPatternLength.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name controlMatriz:comb_3|clk_Counter[15] controlMatriz:comb_3|clk_Counter[15]
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.568
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -4.568             -97.888 clk 
+    Info (332119):    -4.363             -36.558 controlMatriz:comb_3|clk_Counter[15] 
+Info (332146): Worst-case hold slack is -1.607
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.607              -3.046 clk 
+    Info (332119):     0.581               0.000 controlMatriz:comb_3|clk_Counter[15] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.234               0.000 controlMatriz:comb_3|clk_Counter[15] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4683 megabytes
+    Info: Processing ended: Fri May 07 13:33:39 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

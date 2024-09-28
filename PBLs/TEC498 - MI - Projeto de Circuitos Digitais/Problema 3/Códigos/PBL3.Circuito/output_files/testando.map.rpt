@@ -1,0 +1,550 @@
+Analysis & Synthesis report for testando
+Mon Jun 21 19:54:07 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |mainCircuit|get_val_tot:comb_10|state
+  9. State Machine - |mainCircuit|get_id:comb_9|state
+ 10. State Machine - |mainCircuit|maquina4:comb_6|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: add_id:comb_4
+ 16. Parameter Settings for User Entity Instance: get_next_state:comb_5
+ 17. Parameter Settings for User Entity Instance: maquina4:comb_6
+ 18. Parameter Settings for User Entity Instance: get_id:comb_9
+ 19. Parameter Settings for User Entity Instance: get_val_tot:comb_10
+ 20. Parameter Settings for User Entity Instance: comparator_id:comb_11
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Jun 21 19:54:07 2021       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; testando                                    ;
+; Top-level Entity Name       ; mainCircuit                                 ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 246                                         ;
+; Total pins                  ; 23                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM240T100C5       ;                    ;
+; Top-level entity name                                            ; mainCircuit        ; testando           ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+; maquina4.v                       ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/maquina4.v             ;         ;
+; controlOutputDisplay.v           ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v ;         ;
+; get_val_tot.v                    ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/get_val_tot.v          ;         ;
+; get_id.v                         ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/get_id.v               ;         ;
+; timing.v                         ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/timing.v               ;         ;
+; comparator_id.v                  ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/comparator_id.v        ;         ;
+; mainCircuit.v                    ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v          ;         ;
+; rst_overall.v                    ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/rst_overall.v          ;         ;
+; add_id.v                         ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/add_id.v               ;         ;
+; get_next_state.v                 ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/get_next_state.v       ;         ;
+; button_sensor.v                  ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/button_sensor.v        ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 246   ;
+;     -- Combinational with no register       ; 153   ;
+;     -- Register only                        ; 7     ;
+;     -- Combinational with a register        ; 86    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 135   ;
+;     -- 3 input functions                    ; 33    ;
+;     -- 2 input functions                    ; 64    ;
+;     -- 1 input functions                    ; 7     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 210   ;
+;     -- arithmetic mode                      ; 36    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 56    ;
+;                                             ;       ;
+; Total registers                             ; 93    ;
+; Total logic cells in carry chains           ; 38    ;
+; I/O pins                                    ; 23    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 70    ;
+; Total fan-out                               ; 980   ;
+; Average fan-out                             ; 3.64  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                      ;
++-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node        ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                       ; Entity Name          ; Library Name ;
++-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------+----------------------+--------------+
+; |mainCircuit                      ; 246 (0)     ; 93           ; 0          ; 23   ; 0            ; 153 (0)      ; 7 (0)             ; 86 (0)           ; 38 (0)          ; 0 (0)      ; |mainCircuit                              ; mainCircuit          ; work         ;
+;    |add_id:comb_4|                ; 9 (9)       ; 4            ; 0          ; 0    ; 0            ; 5 (5)        ; 2 (2)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |mainCircuit|add_id:comb_4                ; add_id               ; work         ;
+;    |button_sensor:comb_8|         ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mainCircuit|button_sensor:comb_8         ; button_sensor        ; work         ;
+;    |comparator_id:comb_11|        ; 8 (8)       ; 5            ; 0          ; 0    ; 0            ; 3 (3)        ; 3 (3)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |mainCircuit|comparator_id:comb_11        ; comparator_id        ; work         ;
+;    |controlOutputDisplay:comb_12| ; 99 (99)     ; 28           ; 0          ; 0    ; 0            ; 71 (71)      ; 0 (0)             ; 28 (28)          ; 13 (13)         ; 0 (0)      ; |mainCircuit|controlOutputDisplay:comb_12 ; controlOutputDisplay ; work         ;
+;    |get_id:comb_9|                ; 6 (6)       ; 5            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |mainCircuit|get_id:comb_9                ; get_id               ; work         ;
+;    |get_next_state:comb_5|        ; 19 (19)     ; 4            ; 0          ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |mainCircuit|get_next_state:comb_5        ; get_next_state       ; work         ;
+;    |get_val_tot:comb_10|          ; 30 (30)     ; 11           ; 0          ; 0    ; 0            ; 19 (19)      ; 1 (1)             ; 10 (10)          ; 0 (0)           ; 0 (0)      ; |mainCircuit|get_val_tot:comb_10          ; get_val_tot          ; work         ;
+;    |maquina4:comb_6|              ; 15 (15)     ; 8            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |mainCircuit|maquina4:comb_6              ; maquina4             ; work         ;
+;    |rst_overall:comb_3|           ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mainCircuit|rst_overall:comb_3           ; rst_overall          ; work         ;
+;    |timing:comb_7|                ; 56 (56)     ; 28           ; 0          ; 0    ; 0            ; 28 (28)      ; 1 (1)             ; 27 (27)          ; 25 (25)         ; 0 (0)      ; |mainCircuit|timing:comb_7                ; timing               ; work         ;
++-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |mainCircuit|get_val_tot:comb_10|state                                                                                                                                                                       ;
++-----------------------+-----------------------+---------------------+--------------+-----------------+-----------------+-----------------+--------------+-----------------+-----------------+-----------------+--------------+
+; Name                  ; state.wait_pulse_down ; state.penny_invalid ; state.penny2 ; state.penny1_75 ; state.penny1_50 ; state.penny1_25 ; state.penny1 ; state.penny0_75 ; state.penny0_50 ; state.penny0_25 ; state.penny0 ;
++-----------------------+-----------------------+---------------------+--------------+-----------------+-----------------+-----------------+--------------+-----------------+-----------------+-----------------+--------------+
+; state.penny0          ; 0                     ; 0                   ; 0            ; 0               ; 0               ; 0               ; 0            ; 0               ; 0               ; 0               ; 0            ;
+; state.penny0_25       ; 0                     ; 0                   ; 0            ; 0               ; 0               ; 0               ; 0            ; 0               ; 0               ; 1               ; 1            ;
+; state.penny0_50       ; 0                     ; 0                   ; 0            ; 0               ; 0               ; 0               ; 0            ; 0               ; 1               ; 0               ; 1            ;
+; state.penny0_75       ; 0                     ; 0                   ; 0            ; 0               ; 0               ; 0               ; 0            ; 1               ; 0               ; 0               ; 1            ;
+; state.penny1          ; 0                     ; 0                   ; 0            ; 0               ; 0               ; 0               ; 1            ; 0               ; 0               ; 0               ; 1            ;
+; state.penny1_25       ; 0                     ; 0                   ; 0            ; 0               ; 0               ; 1               ; 0            ; 0               ; 0               ; 0               ; 1            ;
+; state.penny1_50       ; 0                     ; 0                   ; 0            ; 0               ; 1               ; 0               ; 0            ; 0               ; 0               ; 0               ; 1            ;
+; state.penny1_75       ; 0                     ; 0                   ; 0            ; 1               ; 0               ; 0               ; 0            ; 0               ; 0               ; 0               ; 1            ;
+; state.penny2          ; 0                     ; 0                   ; 1            ; 0               ; 0               ; 0               ; 0            ; 0               ; 0               ; 0               ; 1            ;
+; state.penny_invalid   ; 0                     ; 1                   ; 0            ; 0               ; 0               ; 0               ; 0            ; 0               ; 0               ; 0               ; 1            ;
+; state.wait_pulse_down ; 1                     ; 0                   ; 0            ; 0               ; 0               ; 0               ; 0            ; 0               ; 0               ; 0               ; 1            ;
++-----------------------+-----------------------+---------------------+--------------+-----------------+-----------------+-----------------+--------------+-----------------+-----------------+-----------------+--------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |mainCircuit|get_id:comb_9|state                                                ;
++------------------------+------------------------+---------------+---------------+---------------+
+; Name                   ; state.wait_button_down ; state.add_col ; state.add_row ; state.wait_id ;
++------------------------+------------------------+---------------+---------------+---------------+
+; state.wait_id          ; 0                      ; 0             ; 0             ; 0             ;
+; state.add_row          ; 0                      ; 0             ; 1             ; 1             ;
+; state.add_col          ; 0                      ; 1             ; 0             ; 1             ;
+; state.wait_button_down ; 1                      ; 0             ; 0             ; 1             ;
++------------------------+------------------------+---------------+---------------+---------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |mainCircuit|maquina4:comb_6|state                                                                     ;
++---------------------+--------------+--------------+--------------+---------------------+-------------------+-----------+
+; Name                ; state.error2 ; state.error1 ; state.all_ok ; state.validate_coin ; state.validate_id ; state.zzz ;
++---------------------+--------------+--------------+--------------+---------------------+-------------------+-----------+
+; state.zzz           ; 0            ; 0            ; 0            ; 0                   ; 0                 ; 0         ;
+; state.validate_id   ; 0            ; 0            ; 0            ; 0                   ; 1                 ; 1         ;
+; state.validate_coin ; 0            ; 0            ; 0            ; 1                   ; 0                 ; 1         ;
+; state.all_ok        ; 0            ; 0            ; 1            ; 0                   ; 0                 ; 1         ;
+; state.error1        ; 0            ; 1            ; 0            ; 0                   ; 0                 ; 1         ;
+; state.error2        ; 1            ; 0            ; 0            ; 0                   ; 0                 ; 1         ;
++---------------------+--------------+--------------+--------------+---------------------+-------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                             ;
++----------------------------------------------------+-----------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal               ; Free of Timing Hazards ;
++----------------------------------------------------+-----------------------------------+------------------------+
+; controlOutputDisplay:comb_12|d2[0]                 ; controlOutputDisplay:comb_12|Mux2 ; yes                    ;
+; controlOutputDisplay:comb_12|d2[1]                 ; controlOutputDisplay:comb_12|Mux2 ; yes                    ;
+; controlOutputDisplay:comb_12|d2[2]                 ; controlOutputDisplay:comb_12|Mux2 ; yes                    ;
+; controlOutputDisplay:comb_12|d2[3]                 ; controlOutputDisplay:comb_12|Mux2 ; yes                    ;
+; controlOutputDisplay:comb_12|d2[4]                 ; controlOutputDisplay:comb_12|Mux2 ; yes                    ;
+; controlOutputDisplay:comb_12|d2[5]                 ; controlOutputDisplay:comb_12|Mux2 ; yes                    ;
+; controlOutputDisplay:comb_12|d2[6]                 ; controlOutputDisplay:comb_12|Mux2 ; yes                    ;
+; controlOutputDisplay:comb_12|d2[7]                 ; controlOutputDisplay:comb_12|Mux2 ; yes                    ;
+; rst_overall:comb_3|rst                             ; GND                               ; yes                    ;
+; Number of user-specified and inferred latches = 9  ;                                   ;                        ;
++----------------------------------------------------+-----------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; timing:comb_7|counter[24]              ; Stuck at GND due to stuck port data_in ;
+; get_val_tot:comb_10|state~4            ; Lost fanout                            ;
+; get_val_tot:comb_10|state~5            ; Lost fanout                            ;
+; get_val_tot:comb_10|state~6            ; Lost fanout                            ;
+; get_val_tot:comb_10|state~7            ; Lost fanout                            ;
+; get_id:comb_9|state~7                  ; Lost fanout                            ;
+; get_id:comb_9|state~8                  ; Lost fanout                            ;
+; maquina4:comb_6|state~6                ; Lost fanout                            ;
+; maquina4:comb_6|state~7                ; Lost fanout                            ;
+; maquina4:comb_6|state~8                ; Lost fanout                            ;
+; Total Number of Removed Registers = 10 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 93    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 56    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; Yes        ; |mainCircuit|get_next_state:comb_5|next_state[0] ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |mainCircuit|add_id:comb_4|col[0]                ;
+; 22:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; No         ; |mainCircuit|controlOutputDisplay:comb_12|Mux32  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: add_id:comb_4 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; add_row        ; 01    ; Unsigned Binary                   ;
+; add_col        ; 10    ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: get_next_state:comb_5 ;
++-----------------+-------+------------------------------------------+
+; Parameter Name  ; Value ; Type                                     ;
++-----------------+-------+------------------------------------------+
+; penny0          ; 0000  ; Unsigned Binary                          ;
+; penny0_25       ; 0001  ; Unsigned Binary                          ;
+; penny0_50       ; 0010  ; Unsigned Binary                          ;
+; penny0_75       ; 0011  ; Unsigned Binary                          ;
+; penny1          ; 0100  ; Unsigned Binary                          ;
+; penny1_25       ; 0101  ; Unsigned Binary                          ;
+; penny1_50       ; 0110  ; Unsigned Binary                          ;
+; penny1_75       ; 0111  ; Unsigned Binary                          ;
+; penny2          ; 1000  ; Unsigned Binary                          ;
+; penny_invalid   ; 1001  ; Unsigned Binary                          ;
+; wait_pulse_down ; 1111  ; Unsigned Binary                          ;
+; penny_of_25     ; 1     ; Signed Integer                           ;
+; penny_of_50     ; 2     ; Signed Integer                           ;
+; penny_of_1      ; 4     ; Signed Integer                           ;
++-----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: maquina4:comb_6 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; zzz            ; 000   ; Unsigned Binary                     ;
+; validate_id    ; 001   ; Unsigned Binary                     ;
+; validate_coin  ; 010   ; Unsigned Binary                     ;
+; all_ok         ; 011   ; Unsigned Binary                     ;
+; error1         ; 100   ; Unsigned Binary                     ;
+; error2         ; 101   ; Unsigned Binary                     ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: get_id:comb_9 ;
++------------------+-------+---------------------------------+
+; Parameter Name   ; Value ; Type                            ;
++------------------+-------+---------------------------------+
+; wait_id          ; 00    ; Unsigned Binary                 ;
+; add_row          ; 01    ; Unsigned Binary                 ;
+; add_col          ; 10    ; Unsigned Binary                 ;
+; wait_button_down ; 11    ; Unsigned Binary                 ;
++------------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: get_val_tot:comb_10 ;
++-----------------+-------+----------------------------------------+
+; Parameter Name  ; Value ; Type                                   ;
++-----------------+-------+----------------------------------------+
+; penny0          ; 0000  ; Unsigned Binary                        ;
+; penny0_25       ; 0001  ; Unsigned Binary                        ;
+; penny0_50       ; 0010  ; Unsigned Binary                        ;
+; penny0_75       ; 0011  ; Unsigned Binary                        ;
+; penny1          ; 0100  ; Unsigned Binary                        ;
+; penny1_25       ; 0101  ; Unsigned Binary                        ;
+; penny1_50       ; 0110  ; Unsigned Binary                        ;
+; penny1_75       ; 0111  ; Unsigned Binary                        ;
+; penny2          ; 1000  ; Unsigned Binary                        ;
+; penny_invalid   ; 1001  ; Unsigned Binary                        ;
+; wait_pulse_down ; 1111  ; Unsigned Binary                        ;
++-----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: comparator_id:comb_11 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; refri          ; 0000  ; Unsigned Binary                           ;
+; salg           ; 0100  ; Unsigned Binary                           ;
+; amen           ; 0101  ; Unsigned Binary                           ;
+; agua           ; 1000  ; Unsigned Binary                           ;
+; suco           ; 1001  ; Unsigned Binary                           ;
+; agua_co        ; 1010  ; Unsigned Binary                           ;
+; cafe           ; 1011  ; Unsigned Binary                           ;
+; sandu_si       ; 1100  ; Unsigned Binary                           ;
+; sandu_na       ; 1101  ; Unsigned Binary                           ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon Jun 21 19:53:55 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Circuito -c testando
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file maquina4.v
+    Info (12023): Found entity 1: maquina4 File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/maquina4.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file controloutputdisplay.v
+    Info (12023): Found entity 1: controlOutputDisplay File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file get_val_tot.v
+    Info (12023): Found entity 1: get_val_tot File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/get_val_tot.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file get_id.v
+    Info (12023): Found entity 1: get_id File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/get_id.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file timing.v
+    Info (12023): Found entity 1: timing File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/timing.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparator_id.v
+    Info (12023): Found entity 1: comparator_id File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/comparator_id.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file maincircuit.v
+    Info (12023): Found entity 1: mainCircuit File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rst_overall.v
+    Info (12023): Found entity 1: rst_overall File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/rst_overall.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file add_id.v
+    Info (12023): Found entity 1: add_id File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/add_id.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file get_next_state.v
+    Info (12023): Found entity 1: get_next_state File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/get_next_state.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file button_sensor.v
+    Info (12023): Found entity 1: button_sensor File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/button_sensor.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at mainCircuit.v(17): instance has no name File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at mainCircuit.v(23): instance has no name File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 23
+Critical Warning (10846): Verilog HDL Instantiation warning at mainCircuit.v(27): instance has no name File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 27
+Critical Warning (10846): Verilog HDL Instantiation warning at mainCircuit.v(36): instance has no name File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 36
+Critical Warning (10846): Verilog HDL Instantiation warning at mainCircuit.v(39): instance has no name File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 39
+Critical Warning (10846): Verilog HDL Instantiation warning at mainCircuit.v(43): instance has no name File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 43
+Critical Warning (10846): Verilog HDL Instantiation warning at mainCircuit.v(50): instance has no name File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 50
+Critical Warning (10846): Verilog HDL Instantiation warning at mainCircuit.v(55): instance has no name File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 55
+Critical Warning (10846): Verilog HDL Instantiation warning at mainCircuit.v(58): instance has no name File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 58
+Critical Warning (10846): Verilog HDL Instantiation warning at mainCircuit.v(62): instance has no name File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 62
+Info (12127): Elaborating entity "mainCircuit" for the top level hierarchy
+Info (12128): Elaborating entity "rst_overall" for hierarchy "rst_overall:comb_3" File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 17
+Warning (10240): Verilog HDL Always Construct warning at rst_overall.v(7): inferring latch(es) for variable "rst", which holds its previous value in one or more paths through the always construct File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/rst_overall.v Line: 7
+Info (10041): Inferred latch for "rst" at rst_overall.v(10) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/rst_overall.v Line: 10
+Info (12128): Elaborating entity "add_id" for hierarchy "add_id:comb_4" File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 23
+Info (10264): Verilog HDL Case Statement information at add_id.v(22): all case item expressions in this case statement are onehot File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/add_id.v Line: 22
+Info (10264): Verilog HDL Case Statement information at add_id.v(50): all case item expressions in this case statement are onehot File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/add_id.v Line: 50
+Info (10264): Verilog HDL Case Statement information at add_id.v(20): all case item expressions in this case statement are onehot File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/add_id.v Line: 20
+Info (12128): Elaborating entity "get_next_state" for hierarchy "get_next_state:comb_5" File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 27
+Info (12128): Elaborating entity "maquina4" for hierarchy "maquina4:comb_6" File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 36
+Info (12128): Elaborating entity "timing" for hierarchy "timing:comb_7" File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 39
+Warning (10230): Verilog HDL assignment warning at timing.v(41): truncated value with size 32 to match size of target (25) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/timing.v Line: 41
+Info (12128): Elaborating entity "button_sensor" for hierarchy "button_sensor:comb_8" File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 43
+Info (12128): Elaborating entity "get_id" for hierarchy "get_id:comb_9" File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 50
+Info (12128): Elaborating entity "get_val_tot" for hierarchy "get_val_tot:comb_10" File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 55
+Warning (10235): Verilog HDL Always Construct warning at get_val_tot.v(189): variable "next_state" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/get_val_tot.v Line: 189
+Info (12128): Elaborating entity "comparator_id" for hierarchy "comparator_id:comb_11" File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 58
+Info (12128): Elaborating entity "controlOutputDisplay" for hierarchy "controlOutputDisplay:comb_12" File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/mainCircuit.v Line: 62
+Warning (10235): Verilog HDL Always Construct warning at controlOutputDisplay.v(43): variable "row" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 43
+Warning (10235): Verilog HDL Always Construct warning at controlOutputDisplay.v(43): variable "col" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 43
+Warning (10235): Verilog HDL Always Construct warning at controlOutputDisplay.v(213): variable "val_tot" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 213
+Warning (10240): Verilog HDL Always Construct warning at controlOutputDisplay.v(30): inferring latch(es) for variable "d2", which holds its previous value in one or more paths through the always construct File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+Warning (10230): Verilog HDL assignment warning at controlOutputDisplay.v(333): truncated value with size 32 to match size of target (14) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 333
+Warning (10230): Verilog HDL assignment warning at controlOutputDisplay.v(350): truncated value with size 32 to match size of target (2) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 350
+Info (10041): Inferred latch for "d2[0]" at controlOutputDisplay.v(30) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+Info (10041): Inferred latch for "d2[1]" at controlOutputDisplay.v(30) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+Info (10041): Inferred latch for "d2[2]" at controlOutputDisplay.v(30) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+Info (10041): Inferred latch for "d2[3]" at controlOutputDisplay.v(30) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+Info (10041): Inferred latch for "d2[4]" at controlOutputDisplay.v(30) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+Info (10041): Inferred latch for "d2[5]" at controlOutputDisplay.v(30) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+Info (10041): Inferred latch for "d2[6]" at controlOutputDisplay.v(30) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+Info (10041): Inferred latch for "d2[7]" at controlOutputDisplay.v(30) File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+Warning (13012): Latch controlOutputDisplay:comb_12|d2[0] has unsafe behavior File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal maquina4:comb_6|state_now[1] File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/maquina4.v Line: 13
+Warning (13012): Latch controlOutputDisplay:comb_12|d2[1] has unsafe behavior File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal maquina4:comb_6|WideOr5 File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/maquina4.v Line: 127
+Warning (13012): Latch controlOutputDisplay:comb_12|d2[2] has unsafe behavior File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal maquina4:comb_6|WideOr5 File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/maquina4.v Line: 127
+Warning (13012): Latch controlOutputDisplay:comb_12|d2[3] has unsafe behavior File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal maquina4:comb_6|state_now[0] File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/maquina4.v Line: 13
+Warning (13012): Latch controlOutputDisplay:comb_12|d2[4] has unsafe behavior File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal maquina4:comb_6|state_now[1] File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/maquina4.v Line: 13
+Warning (13012): Latch controlOutputDisplay:comb_12|d2[5] has unsafe behavior File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal maquina4:comb_6|state_now[1] File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/maquina4.v Line: 13
+Warning (13012): Latch controlOutputDisplay:comb_12|d2[6] has unsafe behavior File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal maquina4:comb_6|state_now[0] File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/maquina4.v Line: 13
+Warning (13012): Latch controlOutputDisplay:comb_12|d2[7] has unsafe behavior File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/controlOutputDisplay.v Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal maquina4:comb_6|state_now[1] File: C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/maquina4.v Line: 13
+Info (17049): 9 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 269 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 246 logic cells
+Info (144001): Generated suppressed messages file C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/output_files/testando.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 4710 megabytes
+    Info: Processing ended: Mon Jun 21 19:54:07 2021
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:24
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/User/Desktop/PBL3 Circuito/Pbl 3 Circuito/output_files/testando.map.smsg.
+
+

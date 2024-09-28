@@ -1,0 +1,37 @@
+module controlOutputDis(
+	input BUTTON,
+	input ENTRADA0,  //1 - ACEITO 
+	input ENTRADA1,  //1 - COMPROMETIDO
+	input ENTRADA2,  //1 - REJEITADO
+	output SEG_A,
+	output SEG_B,
+	output SEG_C,
+	output SEG_D,
+	output SEG_E,
+	output SEG_F,
+	output SEG_G
+
+);
+	
+	wire  w0, w1, w2, w3, w4;
+	
+	//not Inv7 (ENTRADA0NT, ENTRADA0);
+	//not Inv8 (ENTRADA1NT, ENTRADA1);
+	//not Inv9 (ENTRADA2NT, ENTRADA2);
+	
+	and And7 (w0, ENTRADA0, !ENTRADA1, !ENTRADA2);  //ACEITO
+	and And8 (w1, !ENTRADA0, ENTRADA1, !ENTRADA2);  //COMPROMETIDO
+	and And9 (w2, !ENTRADA0, !ENTRADA1, ENTRADA2);  //REJEITADO
+	
+	or Or1 (w3, w0, w1, w2);
+	or Or2 (w4, w0, w2);
+	
+	and And10 (SEG_A, w3, BUTTON);
+	and And11 (SEG_B, w4, BUTTON);
+	and And12 (SEG_C, w0, BUTTON);
+	and And13 (SEG_D, w1, BUTTON);
+	and And14 (SEG_E, w3, BUTTON);
+	and And15 (SEG_F, w3, BUTTON);
+	and And16 (SEG_G, w0, BUTTON);
+
+endmodule
