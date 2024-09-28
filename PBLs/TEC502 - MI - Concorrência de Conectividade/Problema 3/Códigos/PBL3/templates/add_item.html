@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto</title>
+</head>
+<body>
+    <div>
+        <p class="msg-erro"> {{ mensagem }}</p>
+    </div>
+    <div>
+        <form action="{{ url_for('add_item') }}", method="post">
+            Código do produto:
+            <input type="number" min="0" name="codigo" placeholder="000" required><br>
+            Nome do produto:
+            <input type="text" name="nome" placeholder="Nome do produto" required><br>
+            Preço do produto (R$):
+            <input type="number" name="preco" placeholder="00,00" min="0.00" step=".01" required ><br>
+            Quantidade do produto:
+            <input type="number" min="0" name="quantidade" placeholder="Número inteiro" required><br>
+            <br>
+            <input type="submit" name="botao" value="Adicionar">
+        </form>
+    </div>
+    <div>
+        <form action="{{ url_for('add_item') }}", method="post">
+            <input type="submit" name="botao" value="Voltar">
+        </form>
+    </div>
+</body>
+</html>

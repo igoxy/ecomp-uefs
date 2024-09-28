@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Item</title>
+</head>
+<body>
+    <div>
+        <p class="msg"> {{ mensagem }}</p>
+    </div>
+    <div>
+        <form action="{{ url_for('editar_item', codigo=codigo) }}", method="post">
+             
+            Código do produto:
+            <input type="number" min="0" name="codigo" placeholder="000000" value="{{ codigo }}" readonly><br> 
+             
+            Nome do produto:
+            <input type="text" name="nome" placeholder="Nome do produto" value="{{ nome }}" readonly><br>
+            Preço do produto:
+            <input type="number" name="preco" placeholder="00,00" min="0.00"  step=".01" value="{{ preco }}" readonly><br>
+            Quantidade do produto:
+            <input type="number" min="0" name="quantidade" placeholder="Número inteiro" value="{{ quantidade }}" required><br>
+            <br>
+            <input type="submit" name="botao" value="Salvar">
+        </form>
+    </div>
+    <div>
+        <form action="{{ url_for('editar_item', codigo=codigo) }}", method="post">
+            <input type="submit" name="botao" value="Voltar">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta lang="pt-br">
+    <title>Inicio</title>
+</head>
+<body>
+    <div>
+        <p> {{ mensagem }} </p>
+        {% block content %}
+            {% if erro %}
+                <h1> Erro ao listar os clientes. Tente novamente! </h1>
+            {% else %} 
+            <form action="{{ url_for('index') }}" method="post">
+                <fieldset >
+                <legend> Escolha os produtos que deseja comprar </legend>
+                    <div>
+                        {% for produto in produtos.values() %}
+                            <div> 
+                                <input id="{{ produto['codigo'] }}" type="checkbox" name="produto" value="{{ produto['codigo'] }}">
+                                <label for="{{ produto['codigo'] }}"> {{ produto['nome'] }} | R$ {{ produto['preco'] }} </label>
+                            </div>
+                            <br>
+                        {% endfor %}
+                    </div>
+                </fieldset>
+                <div>
+                    <br>
+                    <input type="submit" name="comprar" value="Comprar">
+                </div>
+            </form>
+            {% endif %}
+        {% endblock %}
+    </div>
+</body>
+</html>

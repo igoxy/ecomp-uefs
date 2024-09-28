@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+</head>
+<body>
+    <div>
+        {% block content %}
+            {% if erro %}
+                <h1> Erro ao listar os produtos. Tente novamente! </h1>
+            {% else %} 
+                <form action="{{ url_for('adm_home', codigo=codigo) }}" method="post">
+                    <ol>
+                        {% for produto in produtos.values() %}
+                            <li> <input type="radio" name="produto" required value="{{ produto['codigo'] }}"> {{ produto['codigo'] }} | {{ produto['nome'] }} | R$ {{ produto['preco'] }} </li>
+                            <br>
+                        {% endfor %}
+                    </ol>
+                    <input type="submit" name="botao" value="Editar item">
+                </form>
+            {% endif %}
+        {% endblock %}
+    </div>
+    <div>
+        <form action="{{ url_for('adm_home') }}" method="post"> 
+            <input type="submit" name="botao" value="Adicionar item">
+            <input type="submit" name="botao" value="Itens vendidos">
+        </form>
+    </div>
+</body>
+</html>

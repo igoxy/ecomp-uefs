@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta lang="pt-br">
+    <title>Compra</title>
+</head>
+<body>
+    <script>
+        function mostrarMensagem(){
+            let mensagem = document.querySelector('#msg')
+            let cpf = document.querySelector('#cpf')
+            let endereco = document.querySelector('#endereco')
+            let email = document.querySelector('#email')
+        
+            if (cpf.value.length > 0 && endereco.value.length > 0 && email.value.email){
+                mensagem.textContent = "Processando sua compra... Aguarde!"
+            }
+        }
+    </script>
+    <div>
+        <p class="msg" id="msg"></p>
+    </div>
+    <div>
+        <p class="msg-err">{{ mensagem_erro }}</p>
+        <form action="{{ url_for('compra', produtos=produtos, ) }}", method="post">
+            CPF:
+            <input type="text" name="cpf" id="cpf" required><br>
+            Endereço:
+            <input type="text" name="endereco" id="endereco" required><br>
+            E-mail:
+            <input type="text" name="email" id="email" required><br>
+            <input type="submit" onclick="mostrarMensagem()" name="enviar" value="Confirmar">
+        </form>
+    </div>
+</body>
