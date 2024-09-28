@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: DCDCDC;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.uefs.ecomp.gerenciadorConsultas.controller.TelaMedicoController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clickConsultasMarcadas" stylesheets="@../resources/StyleButtonOpcoes.css" text="Agenda Consultas Marcadas" />
+                  <Button layoutX="60.0" layoutY="127.0" mnemonicParsing="false" onAction="#clickConsultasAtendidas" stylesheets="@../resources/StyleButtonOpcoes.css" text="Agenda Consultas Atendidas" />
+                  <Button layoutX="60.0" layoutY="160.0" mnemonicParsing="false" onAction="#clickHistoricoPacientes" stylesheets="@../resources/StyleButtonOpcoes.css" text="Histórico dos Pacientes" />
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clickSair" style="-fx-border-color: FF0000;" stylesheets="@../resources/StyleButtonExit.css" text="Sair">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

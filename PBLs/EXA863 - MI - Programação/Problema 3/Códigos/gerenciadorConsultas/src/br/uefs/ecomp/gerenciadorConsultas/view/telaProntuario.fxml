@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.uefs.ecomp.gerenciadorConsultas.controller.TelaProntuarioController">
+   <children>
+      <BorderPane layoutY="-10.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="43.0" prefWidth="600.0" spacing="50.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnSairConsulta" mnemonicParsing="false" onAction="#clickSairConsulta" text="Sair da consulta" />
+                  <Button fx:id="btnHistorico" mnemonicParsing="false" onAction="#clickHistoricoPaciente" text="Histórico de consultas" />
+                  <Button mnemonicParsing="false" onAction="#clickReceita" prefHeight="25.6" prefWidth="100.0" text="Receita" />
+                  <Button fx:id="btnFinalizarConsulta" mnemonicParsing="false" onAction="#clickFinalizarConsulta" text="Finalizar consulta" />
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox prefHeight="357.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Identificação do paciente" />
+                  <TextField fx:id="textIdentificaoPaciente" promptText="Identificação do paciente">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="10.0" text="Anamnese" />
+                  <TextArea fx:id="textAnamnese" prefHeight="94.0" prefWidth="446.0" promptText="Anamnese">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <Label layoutX="10.0" layoutY="337.0" text="Exame físico" />
+                  <TextArea fx:id="textExameFisico" prefHeight="94.0" prefWidth="446.0" promptText="Exame físico">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <Label layoutX="10.0" layoutY="338.0" text="Hipótese diagnósticas" />
+                  <TextArea fx:id="textHipoteseDiagnostica" layoutX="10.0" layoutY="36.0" prefHeight="94.0" prefWidth="446.0" promptText="Hipóteses diagnósticas">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <Label layoutX="10.0" layoutY="338.0" text="Diagnósticos definitivos" />
+                  <TextArea fx:id="textDiagnosticosDefinitivos" layoutX="10.0" layoutY="130.0" prefHeight="94.0" prefWidth="446.0" promptText="Diagnósticos definitivos">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <Label layoutX="10.0" layoutY="245.0" text="Tratamentos efetuados" />
+                  <TextArea fx:id="textTratamentosEfetuados" layoutX="10.0" layoutY="276.0" prefHeight="94.0" prefWidth="446.0" promptText="Tratamentos efetuados">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

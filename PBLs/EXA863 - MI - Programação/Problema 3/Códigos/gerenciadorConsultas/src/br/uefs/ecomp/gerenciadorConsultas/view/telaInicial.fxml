@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.uefs.ecomp.gerenciadorConsultas.controller.TelaInicialController">
+   <children>
+      <TabPane layoutX="233.0" layoutY="43.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: white;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab onSelectionChanged="#autoatendimentoSelecionado" text="Autoatendimento">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="371.2" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="Selecione a Especialidade desejada" />
+                              <ComboBox fx:id="comboEspecialidades" onAction="#actionEspecialidades" prefWidth="150.0" promptText="Especialidades">
+                                 <VBox.margin>
+                                    <Insets bottom="25.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Label text="Selecione o Médico " />
+                              <ComboBox fx:id="comboMedicos" layoutX="235.0" layoutY="132.0" onAction="#actionMedico" prefWidth="150.0" promptText="Médico">
+                                 <VBox.margin>
+                                    <Insets bottom="50.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="89.0" spacing="40.0">
+                                 <children>
+                                    <Button cancelButton="true" mnemonicParsing="false" onAction="#clickLimpar" prefHeight="32.0" prefWidth="75.0" style="-fx-border-color: red;" stylesheets="@../resources/StyleButtonCancel.css" text="Limpar" />
+                                    <Button defaultButton="true" mnemonicParsing="false" onAction="#clickBuscar" prefHeight="32.0" prefWidth="0.0" stylesheets="@../resources/StyleButtonLogin.css" text="Buscar" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="150.0" right="150.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Recepcionista">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="371.2" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="CPF" />
+                              <TextField fx:id="cpfRecepcionista" promptText="Insira seu CPF" stylesheets="@../resources/StyleTextField.css">
+                                 <VBox.margin>
+                                    <Insets bottom="25.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Senha" />
+                              <PasswordField fx:id="senhaRecepcionista" promptText="Insira sua senha" stylesheets="@../resources/StyleTextField.css">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="50.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="89.0" spacing="40.0">
+                                 <children>
+                                    <Button cancelButton="true" mnemonicParsing="false" onAction="#clickCancelarRecep" stylesheets="@../resources/StyleButtonCancel.css" text="Cancelar" />
+                                    <Button defaultButton="true" mnemonicParsing="false" onAction="#clickEntrarRecep" stylesheets="@../resources/StyleButtonLogin.css" text="Entrar" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="150.0" right="150.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Médico">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="371.2" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="CPF do médico" />
+                              <TextField fx:id="cpfMedico" promptText="Insira seu CPF" stylesheets="@../resources/StyleTextField.css">
+                                 <VBox.margin>
+                                    <Insets bottom="25.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Senha" />
+                              <PasswordField fx:id="senhaMedico" promptText="Insira sua senha" stylesheets="@../resources/StyleTextField.css">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="50.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="89.0" spacing="40.0">
+                                 <children>
+                                    <Button cancelButton="true" mnemonicParsing="false" onAction="#clickCancelarMed" stylesheets="@../resources/StyleButtonCancel.css" text="Cancelar" />
+                                    <Button defaultButton="true" mnemonicParsing="false" onAction="#clickEntrarMed" stylesheets="@../resources/StyleButtonLogin.css" text="Entrar" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="150.0" right="150.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
