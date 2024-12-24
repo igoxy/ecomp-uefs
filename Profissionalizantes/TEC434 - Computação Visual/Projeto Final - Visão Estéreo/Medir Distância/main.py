@@ -108,8 +108,8 @@ while camera_direita.isOpened() and camera_esquerda.isOpened():
         mascara_esquerda = obter_mascara(frame_esquerdo, cor=AMARELO)    # Obtém a máscara para o frame esquerdo da imagem - o segundo parâmetro indica a cor desejada: 1 = amarelo; 2 = azul
 
         # Aplica a máscara na imagem
-        objeto_direita = cv2.bitwise_and(frame_direito, frame_direito, mask=mascara_direita)     # Aplica um 'end' no frame direito para obter somente os elementos que detém a cor desejada
-        objeto_esquerda = cv2.bitwise_and(frame_esquerdo, frame_esquerdo, mask=mascara_esquerda)   # Aplica um 'end' no frame esquerdo para obter somente os elementos que detém a cor desejada
+        objeto_direita = cv2.bitwise_and(frame_direito, frame_direito, mask=mascara_direita)     # Aplica um 'and' no frame direito para obter somente os elementos que detém a cor desejada
+        objeto_esquerda = cv2.bitwise_and(frame_esquerdo, frame_esquerdo, mask=mascara_esquerda)   # Aplica um 'and' no frame esquerdo para obter somente os elementos que detém a cor desejada
 
         # Encontra objeto desejado para medir
         centro_direito = obter_centro_objeto(frame_direito, mascara_direita)         # Encontra o centro do objeto no frame direito
